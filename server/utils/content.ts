@@ -8,7 +8,30 @@ const LIST_SECTIONS = [
   'organizations',
   'achievements',
   'certificates',
+  'posts',
 ]
+
+export function slugify(text: string) {
+  return String(text || '')
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 80) || 'tulisan'
+}
+
+// Pastikan setiap tulisan punya slug unik untuk URL /blog/<slug>
+function normalizePosts(posts: any[]) {
+  const used = new Set<string>()
+  return posts.map((p) => {
+    let slug = slugify(p.slug || p.title)
+    const base = slug
+    for (let i = 2; used.has(slug); i++) slug = `${base}-${i}`
+    used.add(slug)
+    return { ...p, slug }
+  })
+}
 
 export const SECTIONS = [...OBJECT_SECTIONS, ...LIST_SECTIONS]
 
@@ -28,7 +51,7 @@ export async function writeSection(section: string, value: unknown) {
     throw createError({ statusCode: 400, statusMessage: `Format "${section}" harus ${isList ? 'daftar' : 'objek'}` })
   }
   const content = await readContent()
-  content[section] = value
+  content[section] = section === 'posts' ? normalizePosts(value as any[]) : value
   // Simpan rapi supaya enak dibaca di git diff
   await useStorage('content').setItem(KEY, JSON.stringify(content, null, 2) + '\n')
   return content

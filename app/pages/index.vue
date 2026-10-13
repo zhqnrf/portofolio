@@ -1,5 +1,9 @@
 <script setup lang="ts">
-const { data } = await useFetch<Record<string, any>>('/api/content')
+import { formatDate, publishedPosts, readingMinutes } from '~/utils/markdown'
+
+const { data } = await useFetch<Record<string, any>>('/api/content', { key: 'content' })
+const posts = computed(() => publishedPosts(data.value?.posts))
+const lines = (text: string) => String(text || '').split('\n').map((l) => l.replace(/^[•\-*]\s*/, '').trim()).filter(Boolean)
 
 const profile = computed(() => data.value?.profile ?? {})
 const skills = computed(() => data.value?.skills ?? {})
@@ -20,6 +24,7 @@ const nav = [
   { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
+  { id: 'writing', label: 'Writing' },
   { id: 'activities', label: 'Activities' },
   { id: 'awards', label: 'Awards' },
 ]
@@ -152,7 +157,11 @@ onBeforeUnmount(() => {
                     <Icon v-if="x.link" name="arrow" class="arrow" />
                   </component>
                 </h3>
-                <p class="item-desc">{{ x.description }}</p>
+                <div v-if="x.location" class="label project-meta">{{ x.location }}</div>
+                <ul v-if="lines(x.description).length > 1" class="item-points">
+                  <li v-for="(l, i) in lines(x.description)" :key="i">{{ l }}</li>
+                </ul>
+                <p v-else class="item-desc">{{ x.description }}</p>
                 <div v-if="x.tags?.length" class="chips"><span v-for="t in x.tags" :key="t" class="chip">{{ t }}</span></div>
               </div>
             </li>
@@ -165,7 +174,7 @@ onBeforeUnmount(() => {
         <section id="projects" class="section" aria-label="Selected projects">
           <h3 class="sec-title">Projects</h3>
           <ul class="items">
-            <li v-for="p in projects" :key="p.id" class="item project">
+            <li v-for="p in projects.slice(0, 6)" :key="p.id" class="item project">
               <div class="item-bg" />
               <div class="thumb">
                 <img v-if="p.image" :src="p.image" :alt="p.title" loading="lazy">
@@ -187,6 +196,35 @@ onBeforeUnmount(() => {
               </div>
             </li>
           </ul>
+          <NuxtLink to="/projects" class="more-link">
+            View all {{ projects.length }} projects <Icon name="arrow" />
+          </NuxtLink>
+        </section>
+
+        <section id="writing" class="section" aria-label="Latest writing">
+          <h3 class="sec-title">Writing</h3>
+          <p v-if="!posts.length" class="item-desc">Belum ada tulisan.</p>
+          <ul v-else class="items">
+            <li v-for="p in posts.slice(0, 3)" :key="p.slug" class="item project">
+              <div class="item-bg" />
+              <div class="thumb">
+                <img v-if="p.cover" :src="p.cover" :alt="p.title" loading="lazy">
+                <span v-else class="thumb-fallback">{{ initials(p.title) }}</span>
+              </div>
+              <div class="item-body">
+                <h3 class="item-title">
+                  <NuxtLink :to="`/blog/${p.slug}`" class="stretch">
+                    {{ p.title }} <Icon name="arrow" class="arrow" />
+                  </NuxtLink>
+                </h3>
+                <div class="label project-meta">{{ formatDate(p.date) }} · {{ readingMinutes(p.body) }} min read</div>
+                <p class="item-desc">{{ p.excerpt }}</p>
+              </div>
+            </li>
+          </ul>
+          <NuxtLink to="/blog" class="more-link">
+            Read the blog <Icon name="arrow" />
+          </NuxtLink>
         </section>
 
         <section id="activities" class="section" aria-label="Events and organizations">
@@ -357,6 +395,8 @@ onBeforeUnmount(() => {
 .org { color: var(--teal); }
 .arrow { display: inline-block; vertical-align: -2px; margin-left: 3px; font-size: 14px; transition: transform .2s; }
 .item-desc { margin: 0; font-size: 15px; }
+.item-points { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 15px; }
+.item-points li::marker { color: var(--teal); }
 .project-meta { margin-top: -4px; }
 
 .stretch::after { content: ''; position: absolute; inset: -16px; z-index: 2; }

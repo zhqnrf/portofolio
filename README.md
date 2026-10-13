@@ -28,6 +28,15 @@ git commit -m "Update konten"
 git push
 ```
 
+## Blog
+
+- Tulis di `/admin` → tab **Blog** → **+ Tambah**. Isi tulisan pakai Markdown, dengan toolbar
+  (tebal, judul, kutipan, daftar, kode, link) dan tombol **🖼 Gambar** untuk menyisipkan gambar.
+- Gambar sampul dan gambar di dalam tulisan disimpan ke `public/uploads/<tahun>/`, jadi ikut
+  ter-commit bersama `data/content.json`.
+- Nyalakan **Tampilkan di situs** supaya tulisan muncul; kalau mati, tulisan jadi draf.
+- Halaman: `/blog` (daftar) dan `/blog/<slug>` (artikel). Arsip semua proyek ada di `/projects`.
+
 ## Deploy gratis
 
 Situs dibangun sebagai halaman statis (`npm run generate`), jadi bisa di-hosting gratis:

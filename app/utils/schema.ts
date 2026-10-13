@@ -1,5 +1,5 @@
 // Definisi form untuk halaman /admin. Tambah field di sini kalau mau kolom baru.
-export type FieldType = 'text' | 'textarea' | 'tags' | 'links' | 'url'
+export type FieldType = 'text' | 'textarea' | 'tags' | 'links' | 'url' | 'image' | 'markdown' | 'date' | 'checkbox'
 
 export interface Field {
   key: string
@@ -57,9 +57,27 @@ export const sections: SectionSchema[] = [
       { key: 'period', label: 'Periode', type: 'text', hint: 'Contoh: Feb 2024 — Jun 2024' },
       { key: 'role', label: 'Posisi', type: 'text' },
       { key: 'org', label: 'Tempat', type: 'text' },
-      { key: 'description', label: 'Deskripsi', type: 'textarea' },
+      { key: 'location', label: 'Lokasi', type: 'text', hint: 'Contoh: Kediri, East Java' },
+      { key: 'description', label: 'Deskripsi', type: 'textarea', hint: 'Satu baris = satu poin.' },
       { key: 'tags', label: 'Teknologi', type: 'tags' },
       { key: 'link', label: 'Link', type: 'url' },
+    ],
+  },
+  {
+    key: 'posts',
+    label: 'Blog',
+    kind: 'list',
+    titleKey: 'title',
+    subKey: 'date',
+    fields: [
+      { key: 'title', label: 'Judul', type: 'text' },
+      { key: 'slug', label: 'Slug (URL)', type: 'text', hint: 'Kosongkan untuk dibuat otomatis dari judul.' },
+      { key: 'date', label: 'Tanggal terbit', type: 'date' },
+      { key: 'published', label: 'Tampilkan di situs', type: 'checkbox', hint: 'Matikan untuk menyimpan sebagai draf.' },
+      { key: 'excerpt', label: 'Ringkasan', type: 'textarea', hint: 'Satu-dua kalimat yang tampil di daftar blog.' },
+      { key: 'cover', label: 'Gambar sampul', type: 'image' },
+      { key: 'tags', label: 'Tag', type: 'tags' },
+      { key: 'body', label: 'Isi tulisan', type: 'markdown' },
     ],
   },
   {
@@ -74,7 +92,7 @@ export const sections: SectionSchema[] = [
       { key: 'year', label: 'Tahun', type: 'text' },
       { key: 'description', label: 'Deskripsi', type: 'textarea' },
       { key: 'tags', label: 'Teknologi', type: 'tags' },
-      { key: 'image', label: 'Gambar (URL)', type: 'url', hint: 'Bisa link gambar online, atau taruh file di folder public/ lalu tulis /nama-file.png' },
+      { key: 'image', label: 'Gambar', type: 'image' },
       { key: 'links', label: 'Link', type: 'links', hint: 'Link pertama dipakai saat kartu diklik.' },
     ],
   },
@@ -146,6 +164,9 @@ export const sections: SectionSchema[] = [
 
 export function blankItem(schema: SectionSchema) {
   const item: Record<string, any> = { id: `${schema.key}-${Date.now().toString(36)}` }
-  for (const f of schema.fields) item[f.key] = f.type === 'tags' || f.type === 'links' ? [] : ''
+  for (const f of schema.fields) {
+    item[f.key] = f.type === 'tags' || f.type === 'links' ? [] : f.type === 'checkbox' ? false : ''
+  }
+  if (schema.key === 'posts') item.date = new Date().toISOString().slice(0, 10)
   return item
 }

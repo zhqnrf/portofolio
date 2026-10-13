@@ -209,6 +209,11 @@ svg { width: 100%; height: 100%; display: block; overflow: visible; }
 .awake .mouth { opacity: 0; }
 .awake .mouth-open { opacity: 1; transform: scale(1); transition: transform .3s cubic-bezier(.3, 1.8, .5, 1), opacity .1s; }
 
+/* Kepala miring-miring seperti kucing penasaran */
+.interactive:hover svg,
+.awake svg { animation: tilt 2.4s ease-in-out .5s infinite; transform-origin: 50% 60%; }
+@keyframes tilt { 0%, 100% { transform: rotate(0); } 30% { transform: rotate(-5deg); } 70% { transform: rotate(4deg); } }
+
 @keyframes wag { from { transform: rotate(-14deg); } to { transform: rotate(14deg); } }
 @keyframes blink { 0%, 94%, 100% { transform: scaleY(1); } 97% { transform: scaleY(.1); } }
 
@@ -234,7 +239,7 @@ svg { width: 100%; height: 100%; display: block; overflow: visible; }
 .awake .bubble { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
-  .tail, .eye { animation: none !important; }
+  .tail, .eye, svg { animation: none !important; }
   .logo-cat * { transition-duration: .01s !important; transition-delay: 0s !important; }
 }
 </style>

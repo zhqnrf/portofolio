@@ -34,8 +34,11 @@ export default defineNuxtConfig({
     storage: {
       content: { driver: 'fs', base: './data' },
     },
+    // Halaman blog ditemukan otomatis lewat link dari /blog
     prerender: {
-      routes: ['/'],
+      routes: ['/', '/blog', '/projects'],
+      crawlLinks: true,
+      ignore: ['/admin'],
     },
   },
 })

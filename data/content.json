@@ -15,13 +15,19 @@
   "skills": {
     "tech": [
       "Laravel",
-      "Livewire",
       "PHP",
-      "Bootstrap",
+      "Livewire",
+      "CodeIgniter",
       "MySQL",
+      "Bootstrap",
+      "Tailwind",
+      "Kotlin",
       "Android (XML)",
+      "Nuxt",
       "Figma",
       "Git",
+      "SIMRS Khanza",
+      "LAN & Networking",
       "Scrum & Kanban"
     ],
     "soft": [
@@ -39,69 +45,248 @@
   },
   "experience": [
     {
+      "id": "exp-rsud-slg",
+      "period": "Jul 2025 — Present",
+      "role": "IT Staff",
+      "org": "RSUD Simpang Lima Gumul",
+      "location": "Kediri, East Java",
+      "description": "Developed and deployed a responsive hospital website and company profile to support digital visibility and public communication.\nConfigured and managed Khanza SIMRS, including integration and customization for hospital workflows.\nInstalled and maintained internal LAN and telephone cable infrastructure to ensure seamless communication and data access.\nSet up and troubleshot employee applications and systems, including user access, updates, and daily operational support.",
+      "tags": [
+        "Laravel",
+        "SIMRS Khanza",
+        "MySQL",
+        "Networking"
+      ],
+      "link": "https://www.linkedin.com/company/rsud-simpang-lima-gumul"
+    },
+    {
+      "id": "exp-ppmsr",
+      "period": "Dec 2022 — Jul 2025",
+      "role": "Coordinator Web & Network",
+      "org": "PPM Syafi'ur Rohman",
+      "location": "Jember, East Java",
+      "description": "Developed and maintained 4 web-based systems for over 300 users: the official website, an entrance selection system, an attendance tracker, and a graduation prediction system.\nRan regular bug fixing and performance optimization, and discussed directly with stakeholders to keep the apps relevant and stable.\nBuilt with Laravel, Bootstrap, and MySQL, with authentication, report exports, and role-based access.\nKept uptime above 95% through proactive monitoring.",
+      "tags": [
+        "Laravel",
+        "Livewire",
+        "Bootstrap",
+        "MySQL"
+      ],
+      "link": "https://ppmsr.com"
+    },
+    {
+      "id": "exp-okegarden",
+      "period": "Oct 2024 — Feb 2025",
+      "role": "Software Engineer",
+      "org": "OKE Garden",
+      "location": "Depok, West Java",
+      "description": "Coordinated with design and operations teams to implement new features in the digital garden ordering system.\nLed bi-weekly stand-up meetings to align the development team on progress and blockers.\nConsistently reached a 90% sprint task completion rate throughout the internship.\nAssisted in deployment coordination and maintained technical documentation for project deliverables.",
+      "tags": [
+        "Scrum",
+        "Documentation"
+      ],
+      "link": "https://id.linkedin.com/company/okegarden"
+    },
+    {
+      "id": "exp-markdesign",
+      "period": "Aug 2024 — Jan 2025",
+      "role": "Web Developer",
+      "org": "Mark Design Indonesia",
+      "location": "Surabaya, East Java",
+      "description": "Developed 10+ client-facing websites for cafes and coworking spaces using Laravel and Bootstrap, improving customer engagement and brand presentation.\nDesigned UI/UX for 3 responsive web applications with a clean, mobile-first layout, reducing user drop-off by about 30% based on client feedback.\nManaged 10+ project timelines with Trello and Google Workspace, delivering every project on time.",
+      "tags": [
+        "Laravel",
+        "Bootstrap",
+        "Figma",
+        "Trello"
+      ],
+      "link": "https://id.linkedin.com/company/mark-design-indonesia"
+    },
+    {
       "id": "exp-bangkit",
-      "period": "Feb 2024 — Jun 2024",
+      "period": "Feb 2024 — Jul 2024",
       "role": "Mobile Development Cohort",
       "org": "Bangkit Academy",
-      "description": "Studied the Android mobile development path in a program led by Google, Tokopedia, Gojek, and Traveloka. Designed and built PlasticWise as the capstone project with my team.",
+      "location": "Remote",
+      "description": "Collaborated in a cross-functional team (Mobile, Cloud, and ML) on the capstone project PlasticWise, a smart waste detection app that helps people sort plastic waste.\nCompleted 5+ functional mobile apps with Kotlin and XML, following Android best practices.\nPracticed Agile through daily standups, retrospectives, and sprint reviews in a remote team.\nSelected as one of 4,000 participants from over 20,000 applicants.",
       "tags": [
+        "Kotlin",
         "Android",
-        "Figma",
-        "Teamwork"
+        "XML",
+        "Agile"
       ],
       "link": "https://github.com/PlasticWise"
     },
     {
       "id": "exp-jti",
       "period": "Sep 2023 — Jan 2024",
-      "role": "Intern — Software Developer",
+      "role": "Project Manager, Frontend Developer & UI/UX Designer",
       "org": "JTI Innovation Center",
-      "description": "Worked on the Career Development Center app and the SSC SMASA 2024 competition platform. Led the CDC team as project manager and designed its mobile UI.",
+      "location": "Jember, East Java",
+      "description": "Led development of CDC Polije, a LinkedIn-like career platform for Polije alumni, and finished 2 weeks ahead of schedule.\nPlanned tasks and ran weekly progress reviews with Trello, then Plane and Obsidian, aligning UI/UX, backend, and mobile teams.\nBuilt the frontend of CDC Polije and SSC SMASA, an olympiad platform for quizzes, debates, and storytelling competitions across schools, with Tailwind and Blade.\nLed UI brainstorming from wireframe to implementation, and gave live technical support during the competitions.",
       "tags": [
         "Laravel",
-        "Bootstrap",
-        "Scrum",
-        "UI/UX"
+        "Tailwind",
+        "Blade",
+        "Figma",
+        "Scrum"
       ],
-      "link": ""
+      "link": "https://www.linkedin.com/company/jtinova"
     },
     {
       "id": "exp-ketrowonojoyo",
       "period": "Nov 2023 — Dec 2023",
-      "role": "Web Developer",
+      "role": "Fullstack Web Developer",
       "org": "Puskesmas Ketrowonojoyo",
-      "description": "Digitalized the health center with three web apps: UGD Payment, SPPD Online, and a portal with SSO login. Handled UI/UX, client reporting, and presentations, and shipped all three within one month.",
+      "location": "Pacitan, East Java",
+      "description": "Built SSO Mas Joyo, a single sign-on portal that connects the emergency room (UGD) billing system and the official travel letter system for medical staff.\nFinished the whole frontend in 30 days, working closely with the internal IT and finance departments.\nStill in active use, handling over 50 transactions a day and internal document workflows.",
       "tags": [
         "Laravel",
         "Bootstrap",
-        "PHPWord"
+        "PHPWord",
+        "SSO"
       ],
       "link": "https://puskesmasketrowonojoyo.com"
     },
     {
-      "id": "exp-ppmsr",
-      "period": "Dec 2022 — Present",
-      "role": "Fullstack Developer",
-      "org": "PPM Syafi'ur Rohman",
-      "description": "Built and maintain three websites for the boarding school: a company profile, the SMPSR student registration system, and SR Absensi for QR code attendance. All of them have been in daily use for over a year.",
-      "tags": [
-        "Laravel",
-        "Livewire",
-        "Bootstrap"
-      ],
-      "link": "https://ppmsr.com"
-    },
-    {
       "id": "exp-gondosari",
-      "period": "Jun 2020 — May 2021",
+      "period": "Jun 2020 — May 2022",
       "role": "Data Entry Assistant",
-      "org": "Puskesmas Gondosari Pacitan",
-      "description": "Helped record and organize service data at the community health center.",
-      "tags": [],
+      "org": "Puskesmas Gondosari",
+      "location": "Pacitan, East Java",
+      "description": "Entered BPJS health data for daily clinic visitors and produced weekly recap reports.\nKept 4,000+ entries a month accurate with consistent data quality checks.\nHelped staff prepare periodic reports for regional health audits and operational planning.",
+      "tags": [
+        "Data Entry",
+        "BPJS"
+      ],
       "link": ""
     }
   ],
   "projects": [
+    {
+      "id": "prj-gumi",
+      "title": "GUMI — SIMRS RSUD Simpang Lima Gumul",
+      "role": "Fullstack Developer",
+      "year": "2026",
+      "description": "Hospital service web app running on top of the SIMRS Khanza database: registration and queues, electronic medical records, lab, radiology, pharmacy, and BPJS VClaim integration, with its own accounts, roles, and audit logs.",
+      "tags": [
+        "Laravel",
+        "PHP 8",
+        "MySQL",
+        "SIMRS Khanza",
+        "BPJS"
+      ],
+      "image": "",
+      "links": []
+    },
+    {
+      "id": "prj-mastoni",
+      "title": "MAS TONI",
+      "role": "Fullstack Developer",
+      "year": "2026",
+      "description": "IT management portal for the hospital IT unit: IT warehouse inventory, IT incident reports, handover documents (BAST), and server logs.",
+      "tags": [
+        "CodeIgniter",
+        "PHP",
+        "MySQL"
+      ],
+      "image": "",
+      "links": []
+    },
+    {
+      "id": "prj-fitc",
+      "title": "Flash Inspire Training Center",
+      "role": "Fullstack Developer",
+      "year": "2026",
+      "description": "Website and admin dashboard for a training center: landing page, events, gallery, partners, and event attendance.",
+      "tags": [
+        "Laravel",
+        "Bootstrap",
+        "MySQL"
+      ],
+      "image": "",
+      "links": []
+    },
+    {
+      "id": "prj-diksera",
+      "title": "DIKSERA",
+      "role": "Fullstack Developer",
+      "year": "2025",
+      "description": "Internal platform for nurse competency, certification, and evaluation at RSUD Simpang Lima Gumul, with role-based dashboards for admins, nurses, and assessors, structured scoring forms, and certificate verification.",
+      "tags": [
+        "Laravel",
+        "Livewire",
+        "Bootstrap 5",
+        "MySQL"
+      ],
+      "image": "",
+      "links": []
+    },
+    {
+      "id": "prj-sindikat",
+      "title": "Sindikat",
+      "role": "Fullstack Developer",
+      "year": "2025",
+      "description": "Training, education, and research management for the hospital: internship and research applications with approval, room scheduling, attendance, certificates, MOUs, and an intent-based chatbot that summarizes live data.",
+      "tags": [
+        "Laravel",
+        "MySQL",
+        "PDF Export",
+        "Excel Import"
+      ],
+      "image": "",
+      "links": []
+    },
+    {
+      "id": "prj-rsud-web",
+      "title": "RSUD Simpang Lima Gumul Website",
+      "role": "Web Developer",
+      "year": "2025",
+      "description": "Responsive hospital website and company profile that supports the hospital's digital visibility and public communication.",
+      "tags": [
+        "Laravel",
+        "Bootstrap"
+      ],
+      "image": "",
+      "links": []
+    },
+    {
+      "id": "prj-okegarden",
+      "title": "OKE Garden Ordering System",
+      "role": "Software Engineer",
+      "year": "2024",
+      "description": "Digital garden ordering system. I coordinated new features with the design and operations teams and kept the technical documentation up to date.",
+      "tags": [
+        "Scrum",
+        "Documentation"
+      ],
+      "image": "",
+      "links": [
+        {
+          "label": "OKE Garden",
+          "url": "https://id.linkedin.com/company/okegarden"
+        }
+      ]
+    },
+    {
+      "id": "prj-markdesign",
+      "title": "Cafe & Coworking Websites",
+      "role": "Web Developer, UI/UX Designer",
+      "year": "2024",
+      "description": "10+ client websites for cafes and coworking spaces at Mark Design Indonesia, including 3 responsive web apps designed mobile-first.",
+      "tags": [
+        "Laravel",
+        "Bootstrap",
+        "Figma"
+      ],
+      "image": "",
+      "links": [
+        {
+          "label": "Mark Design",
+          "url": "https://id.linkedin.com/company/mark-design-indonesia"
+        }
+      ]
+    },
     {
       "id": "prj-plasticwise",
       "title": "PlasticWise",
@@ -123,6 +308,28 @@
         {
           "label": "Figma",
           "url": "https://www.figma.com/design/fJAU7fp3O56i70xHYZmgWo/Interface?node-id=26-648"
+        }
+      ]
+    },
+    {
+      "id": "prj-ssc",
+      "title": "SSC SMASA XXIV",
+      "role": "Frontend Web Developer",
+      "year": "2024",
+      "description": "Competition platform for SMA Negeri 1 Jember with multiple choice exams, video debates, and storytelling. Admins manage participants and scores; participants upload entries and see their results.",
+      "tags": [
+        "Laravel",
+        "Bootstrap"
+      ],
+      "image": "",
+      "links": [
+        {
+          "label": "Website",
+          "url": "https://sscxxiv.com/ssc/"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Arvita/sscsmasa2024"
         }
       ]
     },
@@ -195,7 +402,7 @@
       "title": "PPM Syafi'ur Rohman Websites",
       "role": "Fullstack Developer, Tester, Maintenance",
       "year": "2022",
-      "description": "A company profile site, SMPSR for new student registration and student data, and SR Absensi, a QR code attendance system. Built to the client's needs and maintained for over a year.",
+      "description": "Four systems for the boarding school, used by over 300 people: the official website, SMPSR for entrance selection and student data, SR Absensi for QR code attendance, and a graduation prediction system.",
       "tags": [
         "Laravel",
         "Livewire",
@@ -218,28 +425,6 @@
         {
           "label": "GitHub",
           "url": "https://github.com/zhqnrf/srAbsensi"
-        }
-      ]
-    },
-    {
-      "id": "prj-ssc",
-      "title": "SSC SMASA XXIV",
-      "role": "Frontend Web Developer",
-      "year": "2024",
-      "description": "Competition platform for SMA Negeri 1 Jember with multiple choice exams, video debates, and storytelling. Admins manage participants and scores; participants upload entries and see their results.",
-      "tags": [
-        "Laravel",
-        "Bootstrap"
-      ],
-      "image": "",
-      "links": [
-        {
-          "label": "Website",
-          "url": "https://sscxxiv.com/ssc/"
-        },
-        {
-          "label": "GitHub",
-          "url": "https://github.com/Arvita/sscsmasa2024"
         }
       ]
     }
@@ -417,6 +602,23 @@
       "issuer": "Dicoding",
       "year": "",
       "url": ""
+    }
+  ],
+  "posts": [
+    {
+      "id": "post-php-masih-eksis",
+      "title": "PHP Katanya Mau Mati. Kok Masih Ada di Mana-mana?",
+      "slug": "php-katanya-mau-mati",
+      "date": "2026-10-13",
+      "published": true,
+      "excerpt": "Hampir tiap tahun ada yang bilang PHP sudah sekarat. Tapi pagi ini aku membuka empat proyek di kantor, dan keempatnya PHP. Ini alasan kenapa bahasa yang sering diejek ini masih bertahan.",
+      "cover": "/uploads/2026/php-masih-eksis-cover.svg",
+      "tags": [
+        "PHP",
+        "Laravel",
+        "Opini"
+      ],
+      "body": "Hampir tiap tahun ada saja tulisan yang judulnya mirip: *\"PHP is dead\"*, *\"Masih belajar PHP di tahun sekian?\"*, atau *\"Saatnya pindah dari PHP\"*. Lucunya, pagi ini aku membuka empat proyek di kantor, dan keempatnya PHP. Sistem layanan rumah sakit yang berjalan di atas database SIMRS, platform kompetensi perawat, sistem diklat, sampai portal manajemen IT. Semuanya dipakai orang sungguhan setiap hari.\n\nJadi aku penasaran: kalau PHP memang sekarat, kenapa pasiennya masih bangun tiap pagi dan berangkat kerja?\n\n## Dari mana cap \"PHP mau mati\" itu datang\n\nReputasi buruk PHP sebagian besar memang pantas, setidaknya untuk zamannya. PHP lahir tahun 1995 sebagai kumpulan skrip kecil buatan Rasmus Lerdorf untuk halaman pribadinya. Ia tumbuh cepat, bukan karena dirancang dengan rapi, tapi karena gampang dipakai. Taruh file `.php` di hosting, campur HTML dengan query database, dan halamanmu langsung jalan.\n\nKemudahan itu juga yang melahirkan banyak kode berantakan. Di era PHP 4 dan awal PHP 5, kita akrab dengan:\n\n- Query SQL yang ditempel langsung dari `$_GET`, alias pintu terbuka untuk SQL injection.\n- Fungsi `mysql_*` yang akhirnya dihapus.\n- Nama fungsi yang tidak konsisten, seperti `strpos()` tapi `str_replace()`, dan urutan parameter yang suka-suka.\n- Satu file berisi HTML, logika, dan query sekaligus, ribuan baris panjangnya.\n\nKetika Node.js, Go, dan Python makin populer, PHP jadi sasaran empuk. Ia dianggap bahasa \"lama\" untuk website \"lama\". Cap itu menempel, bahkan setelah bahasanya sendiri berubah jauh.\n\n## Angka yang bilang sebaliknya\n\nCoba lihat datanya. Menurut survei W3Techs, PHP dipakai oleh sekitar **tiga perempat situs web yang bahasa server-nya bisa dideteksi**. Angkanya naik-turun sedikit setiap bulan, tapi posisinya sudah bertahun-tahun di puncak dan jaraknya jauh dengan bahasa di bawahnya.\n\nSalah satu penyebab terbesarnya adalah WordPress, yang sendirian menjalankan lebih dari 40% seluruh situs di internet. Belum lagi Wikipedia yang dibangun di atas MediaWiki, ribuan toko online, sistem sekolah, aplikasi kampus, dan sistem instansi pemerintah.\n\nBahasa yang benar-benar mau mati biasanya ditandai dengan proyek yang berhenti, komunitas yang sepi, dan rilis yang makin jarang. PHP justru sebaliknya.\n\n## PHP yang sekarang bukan PHP yang dulu\n\nTitik baliknya ada di **PHP 7** (2015). Mesin intinya ditulis ulang, dan banyak aplikasi tiba-tiba berjalan sekitar dua kali lebih cepat dan lebih hemat memori, tanpa mengubah satu baris kode pun.\n\nLalu datang seri **PHP 8** yang membuat bahasanya terasa modern:\n\n- **8.0** (2020): JIT, *named arguments*, ekspresi `match`, *union types*, dan *nullsafe operator* `?->`.\n- **8.1**: `enum`, properti `readonly`, dan *fibers*.\n- **8.2** sampai **8.4**: *readonly classes*, *typed class constants*, sampai *property hooks* yang membuat getter dan setter jauh lebih ringkas.\n- **8.5** (2025): *pipe operator* `|>` untuk merangkai fungsi dari kiri ke kanan.\n\nSupaya kebayang, ini contoh kecil status antrian pasien dengan gaya PHP modern:\n\n```php\n<?php\n\nenum Status: string\n{\n    case Menunggu = 'menunggu';\n    case Dilayani = 'dilayani';\n    case Selesai  = 'selesai';\n\n    public function label(): string\n    {\n        return match ($this) {\n            self::Menunggu => 'Menunggu dipanggil',\n            self::Dilayani => 'Sedang dilayani',\n            self::Selesai  => 'Selesai',\n        };\n    }\n}\n\nfinal readonly class Antrian\n{\n    public function __construct(\n        public string $nomor,\n        public Status $status = Status::Menunggu,\n    ) {}\n}\n\n$antrian = new Antrian(nomor: 'A-012');\necho $antrian->status->label(); // Menunggu dipanggil\n```\n\nTidak ada string ajaib yang bisa salah ketik, tidak ada objek yang diam-diam berubah, dan editor bisa membantu melengkapi kode dengan tepat. Ini jauh dari PHP yang ada di ingatan banyak orang.\n\nSejak 2021 juga ada **The PHP Foundation**, yayasan yang didukung perusahaan seperti JetBrains dan Automattic untuk membiayai pengembang inti PHP. Artinya, masa depan bahasanya tidak lagi bergantung pada segelintir relawan.\n\n## Ekosistem yang bikin betah\n\nBahasa bagus saja tidak cukup. Yang membuat developer betah adalah ekosistemnya, dan di sini PHP sangat matang:\n\n- **Composer** dan **Packagist** untuk mengelola dependensi, dengan ratusan ribu paket siap pakai.\n- **Laravel** dan **Symfony**, dua framework yang dokumentasinya rapi dan komunitasnya besar.\n- **Livewire** untuk membuat halaman interaktif tanpa harus menulis banyak JavaScript.\n- **PHPStan** dan **Pest** untuk analisis statis dan testing, sehingga kode PHP bisa dijaga kualitasnya seperti bahasa lain.\n\nHampir semua proyek yang pernah aku kerjakan, dari sistem absensi QR untuk pesantren sampai portal SSO puskesmas, dibangun dengan Laravel. Alasannya sederhana: dari login, hak akses, ekspor laporan, sampai antrean pekerjaan, sebagian besar sudah tersedia. Aku bisa fokus ke masalah pengguna, bukan ke fondasi.\n\n## Alasan paling membumi: murah dan gampang di-deploy\n\nIni alasan yang jarang dibahas di forum, tapi paling terasa di lapangan, terutama di Indonesia.\n\nBanyak klienku adalah instansi kecil: puskesmas, sekolah, pesantren, rumah sakit daerah. Anggarannya terbatas, tim IT-nya kecil, dan servernya kadang cuma satu mesin di ruang IT atau paket hosting murah. PHP cocok sekali dengan kondisi itu:\n\n- **Hosting PHP ada di mana-mana dan murah.** Hampir semua paket shared hosting mendukung PHP dan MySQL tanpa konfigurasi tambahan.\n- **Model eksekusinya sederhana.** Setiap request berjalan sendiri lalu selesai. Kalau satu request error, aplikasinya tidak ikut tumbang.\n- **Mudah diwariskan.** Banyak lulusan SMK dan kampus di sini belajar PHP, jadi aplikasi yang aku buat hari ini bisa dirawat orang lain besok.\n\nWaktu membangun portal SSO untuk puskesmas, seluruh frontend selesai dalam 30 hari dan sampai sekarang masih melayani puluhan transaksi setiap hari. Bukan karena PHP paling canggih, tapi karena ia paling cocok dengan kebutuhan, anggaran, dan orang-orang yang akan merawatnya.\n\n## Jadi, PHP cocok untuk semua hal?\n\nTentu tidak, dan jujur soal ini penting. PHP bukan pilihan terbaik untuk:\n\n- Aplikasi *real-time* berat seperti chat atau game multipemain. Solusinya ada, seperti Swoole, ReactPHP, atau Laravel Reverb, tapi ekosistem lain lebih terbiasa di area ini.\n- Komputasi berat seperti machine learning, yang lebih nyaman dikerjakan di Python.\n- Aplikasi mobile native, yang tetap butuh Kotlin atau Swift.\n\nMasalah terbesar PHP sebenarnya bukan bahasanya, tapi kode lama yang masih beredar. Banyak sistem warisan ditulis dengan gaya PHP 5 dan tidak pernah diperbarui. Itu yang sering dijadikan bukti bahwa \"PHP jelek\", padahal sama saja dengan menilai mobil hari ini dari mobil keluaran tahun 2005.\n\n## Penutup\n\nPHP tidak mati. Yang mati adalah cara lama menulis PHP.\n\nKalau kamu baru mulai belajar, PHP modern dengan Laravel masih jadi jalan yang sangat masuk akal untuk bisa membangun sesuatu yang berguna dengan cepat. Kalau kamu sudah lama di dunia web, coba buka lagi PHP versi terbaru. Mungkin kamu akan kaget seperti aku.\n\nPada akhirnya, pengguna tidak peduli bahasa apa yang kita pakai. Perawat yang mengisi evaluasi, petugas loket yang memanggil antrian, atau santri yang absen pakai QR code cuma peduli satu hal: aplikasinya jalan. Selama itu masih bisa dijawab PHP dengan baik, ia akan terus ada."
     }
   ]
 }
