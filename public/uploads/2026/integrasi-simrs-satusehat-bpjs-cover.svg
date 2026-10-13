@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a583e"/>
+      <stop offset=".55" stop-color="#0b7068"/>
+      <stop offset="1" stop-color="#05718d"/>
+    </linearGradient>
+    <linearGradient id="t" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3fd3a0"/>
+      <stop offset="1" stop-color="#36b9d6"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity=".05"/>
+    </pattern>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#3fd3a0"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="#0b0f0e"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <rect width="1600" height="10" fill="url(#g)"/>
+
+  <g font-family="ui-monospace, Consolas, monospace">
+    <!-- SIMRS -->
+    <g transform="translate(860 360)">
+      <rect width="260" height="180" rx="22" fill="url(#g)"/>
+      <text x="130" y="82" fill="#ffffff" font-size="34" font-weight="700" text-anchor="middle">SIMRS</text>
+      <text x="130" y="122" fill="#ffffff" fill-opacity=".8" font-size="20" text-anchor="middle">Khanza · GUMI</text>
+      <path d="M118 140 h24 M130 128 v24" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    <!-- SATUSEHAT -->
+    <g transform="translate(1240 170)">
+      <rect width="250" height="150" rx="20" fill="#16211e" stroke="#3fd3a0" stroke-opacity=".6" stroke-width="2"/>
+      <text x="125" y="66" fill="#e6f2ee" font-size="28" font-weight="700" text-anchor="middle">SATUSEHAT</text>
+      <text x="125" y="104" fill="#3fd3a0" font-size="20" text-anchor="middle">FHIR R4 · OAuth2</text>
+    </g>
+    <!-- BPJS -->
+    <g transform="translate(1240 580)">
+      <rect width="250" height="150" rx="20" fill="#16211e" stroke="#36b9d6" stroke-opacity=".6" stroke-width="2"/>
+      <text x="125" y="66" fill="#e6f2ee" font-size="28" font-weight="700" text-anchor="middle">BPJS</text>
+      <text x="125" y="104" fill="#36b9d6" font-size="20" text-anchor="middle">VClaim · Antrean</text>
+    </g>
+    <!-- Panah -->
+    <path d="M1120 400 C 1180 380 1190 300 1236 270" fill="none" stroke="#3fd3a0" stroke-width="4" marker-end="url(#arr)" stroke-dasharray="10 8"/>
+    <path d="M1120 500 C 1180 520 1190 600 1236 630" fill="none" stroke="#3fd3a0" stroke-width="4" marker-end="url(#arr)" stroke-dasharray="10 8"/>
+    <text x="1150" y="300" fill="#7d8d87" font-size="18">Encounter</text>
+    <text x="1150" y="618" fill="#7d8d87" font-size="18">SEP</text>
+  </g>
+
+  <!-- Judul -->
+  <g font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-weight="800">
+    <text x="120" y="320" fill="#ffffff" font-size="80" letter-spacing="-3">Di balik layar</text>
+    <text x="120" y="415" fill="#ffffff" font-size="80" letter-spacing="-3">integrasi</text>
+    <text x="120" y="510" fill="url(#t)" font-size="80" letter-spacing="-3">SIMRS, SATUSEHAT</text>
+    <text x="120" y="605" fill="url(#t)" font-size="80" letter-spacing="-3">&amp; BPJS</text>
+  </g>
+  <text x="122" y="695" fill="#7d8d87" font-family="ui-monospace, Consolas, monospace" font-size="26">token · signature · FHIR · retry</text>
+</svg>
