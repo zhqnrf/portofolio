@@ -45,6 +45,19 @@
   },
   "experience": [
     {
+      "id": "exp-alfa-software",
+      "period": "Present",
+      "role": "Founder & Director",
+      "org": "PT Alfa Software",
+      "location": "Kediri, East Java",
+      "description": "Founded and run my own software company (PT Perorangan), handling everything from client meetings and quotes to development, deployment, and maintenance.\nDelivered client projects such as school library and finance apps and digital wedding invitations.",
+      "tags": [
+        "Business",
+        "Client Projects"
+      ],
+      "link": ""
+    },
+    {
       "id": "exp-rsud-slg",
       "period": "Jul 2025 — Present",
       "role": "IT Staff",
@@ -180,29 +193,45 @@
       "links": []
     },
     {
-      "id": "prj-mastoni",
-      "title": "MAS TONI",
+      "id": "prj-sindikat",
+      "title": "Sindikat",
       "role": "Fullstack Developer",
-      "year": "2026",
-      "description": "IT management portal for the hospital IT unit: IT warehouse inventory, IT incident reports, handover documents (BAST), and server logs.",
+      "year": "2025",
+      "description": "Training, education, and research management for the hospital: internship and research applications with approval, room scheduling, attendance, certificates, MOUs, and an intent-based chatbot that summarizes live data. Won 1st place at Kediri Cerdas 2026 (OPD category).",
       "tags": [
-        "CodeIgniter",
-        "PHP",
-        "MySQL"
+        "Laravel",
+        "MySQL",
+        "PDF Export",
+        "Excel Import"
       ],
       "image": "",
       "links": []
     },
     {
-      "id": "prj-fitc",
-      "title": "Flash Inspire Training Center",
+      "id": "prj-analog",
+      "title": "ANALOG",
       "role": "Fullstack Developer",
-      "year": "2026",
-      "description": "Website and admin dashboard for a training center: landing page, events, gallery, partners, and event attendance.",
+      "year": "2025",
+      "description": "Tool at RSUD Simpang Lima Gumul for checking BPJS coverage limits (plafon) and billing before a claim is submitted, so the team can catch over-limit costs early. Won 2nd place at Kediri Cerdas 2025 (OPD category).",
       "tags": [
         "Laravel",
-        "Bootstrap",
-        "MySQL"
+        "MySQL",
+        "BPJS",
+        "SIMRS Khanza"
+      ],
+      "image": "",
+      "links": []
+    },
+    {
+      "id": "prj-teras",
+      "title": "TERAS",
+      "role": "Fullstack Developer",
+      "year": "",
+      "description": "Electronic signature (TTE) service for hospital documents at RSUD Simpang Lima Gumul, integrated with BSrE, the national electronic certification agency.",
+      "tags": [
+        "Laravel",
+        "BSrE",
+        "Digital Signature"
       ],
       "image": "",
       "links": []
@@ -223,16 +252,15 @@
       "links": []
     },
     {
-      "id": "prj-sindikat",
-      "title": "Sindikat",
+      "id": "prj-mastoni",
+      "title": "MAS TONI",
       "role": "Fullstack Developer",
-      "year": "2025",
-      "description": "Training, education, and research management for the hospital: internship and research applications with approval, room scheduling, attendance, certificates, MOUs, and an intent-based chatbot that summarizes live data.",
+      "year": "2026",
+      "description": "IT management portal for the hospital IT unit: IT warehouse inventory, IT incident reports, handover documents (BAST), and server logs.",
       "tags": [
-        "Laravel",
-        "MySQL",
-        "PDF Export",
-        "Excel Import"
+        "CodeIgniter",
+        "PHP",
+        "MySQL"
       ],
       "image": "",
       "links": []
@@ -246,6 +274,72 @@
       "tags": [
         "Laravel",
         "Bootstrap"
+      ],
+      "image": "",
+      "links": []
+    },
+    {
+      "id": "prj-undangan",
+      "title": "Digital Wedding Invitations",
+      "role": "Web Developer, UI Designer",
+      "year": "2026",
+      "description": "Custom digital wedding invitations with a countdown, RSVP, photo gallery, venue map, add-to-calendar, guestbook, and digital gift details.",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Vercel"
+      ],
+      "image": "",
+      "links": [
+        {
+          "label": "Kresna & Tiara",
+          "url": "https://kresnatiara.vercel.app/"
+        },
+        {
+          "label": "Ilham & Sahitya",
+          "url": "https://halotya.vercel.app/"
+        }
+      ]
+    },
+    {
+      "id": "prj-fitc",
+      "title": "Flash Inspire Training Center",
+      "role": "Fullstack Developer",
+      "year": "2026",
+      "description": "Website and admin dashboard for a training center: landing page, events, gallery, partners, and event attendance.",
+      "tags": [
+        "Laravel",
+        "Bootstrap",
+        "MySQL"
+      ],
+      "image": "",
+      "links": []
+    },
+    {
+      "id": "prj-smkn-perpus",
+      "title": "SMKN Ngadirojo Library App",
+      "role": "Fullstack Developer",
+      "year": "",
+      "description": "Desktop library app for SMKN Ngadirojo: book catalog, members, and borrowing and returns, built with PHP and packaged as a desktop app with PHP Desktop.",
+      "tags": [
+        "PHP",
+        "PHP Desktop",
+        "MySQL"
+      ],
+      "image": "",
+      "links": []
+    },
+    {
+      "id": "prj-smkn-keuangan",
+      "title": "SMKN Ngadirojo Finance App",
+      "role": "Fullstack Developer",
+      "year": "",
+      "description": "Desktop finance app for SMKN Ngadirojo to record school income, expenses, and reports, built with PHP and PHP Desktop.",
+      "tags": [
+        "PHP",
+        "PHP Desktop",
+        "MySQL"
       ],
       "image": "",
       "links": []
@@ -520,6 +614,16 @@
     }
   ],
   "achievements": [
+    {
+      "id": "ach-kediri-cerdas-2026",
+      "year": "2026",
+      "title": "1st Place, Kediri Cerdas 2026 (OPD Category) with the Sindikat innovation"
+    },
+    {
+      "id": "ach-kediri-cerdas-2025",
+      "year": "2025",
+      "title": "2nd Place, Kediri Cerdas 2025 (OPD Category) with the ANALOG innovation"
+    },
     {
       "id": "ach-bnsp",
       "year": "2023",
