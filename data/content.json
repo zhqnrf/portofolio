@@ -1,0 +1,422 @@
+{
+  "profile": {
+    "name": "Zhaqian Rouf Alfauzi",
+    "role": "Web & Mobile Developer",
+    "tagline": "I build clean, useful web and mobile apps for schools, clinics, and communities, from the first sketch to the final deploy.",
+    "about": "I'm an Informatics Management student at Jember State Polytechnic who mostly works on web and mobile development. I like finding the simple idea behind a messy problem and turning it into something people can actually use every day.\n\nMost of my work so far has been real systems for real clients: digitalizing a community health center with three Laravel apps in one month, building registration and QR-based attendance systems for an Islamic boarding school, and leading a team on a career center app for my campus. Along the way I've handled project management, UI/UX design, client presentations, and long-term maintenance.\n\nOutside of code I'm active in organizations and event committees, where I usually end up handling design, publication, and documentation.",
+    "location": "Jember, East Java",
+    "email": "zhaqianroufa@gmail.com",
+    "phone": "+62 895-0951-2660",
+    "whatsapp": "6289509512660",
+    "github": "https://github.com/zhqnrf",
+    "linkedin": "https://linkedin.com/in/zhaqianroufa",
+    "resume": ""
+  },
+  "skills": {
+    "tech": [
+      "Laravel",
+      "Livewire",
+      "PHP",
+      "Bootstrap",
+      "MySQL",
+      "Android (XML)",
+      "Figma",
+      "Git",
+      "Scrum & Kanban"
+    ],
+    "soft": [
+      "Leadership",
+      "Communication",
+      "Time Management",
+      "Curiosity",
+      "Creativity",
+      "Innovation"
+    ],
+    "languages": [
+      "Indonesian (Native)",
+      "English (Basic)"
+    ]
+  },
+  "experience": [
+    {
+      "id": "exp-bangkit",
+      "period": "Feb 2024 — Jun 2024",
+      "role": "Mobile Development Cohort",
+      "org": "Bangkit Academy",
+      "description": "Studied the Android mobile development path in a program led by Google, Tokopedia, Gojek, and Traveloka. Designed and built PlasticWise as the capstone project with my team.",
+      "tags": [
+        "Android",
+        "Figma",
+        "Teamwork"
+      ],
+      "link": "https://github.com/PlasticWise"
+    },
+    {
+      "id": "exp-jti",
+      "period": "Sep 2023 — Jan 2024",
+      "role": "Intern — Software Developer",
+      "org": "JTI Innovation Center",
+      "description": "Worked on the Career Development Center app and the SSC SMASA 2024 competition platform. Led the CDC team as project manager and designed its mobile UI.",
+      "tags": [
+        "Laravel",
+        "Bootstrap",
+        "Scrum",
+        "UI/UX"
+      ],
+      "link": ""
+    },
+    {
+      "id": "exp-ketrowonojoyo",
+      "period": "Nov 2023 — Dec 2023",
+      "role": "Web Developer",
+      "org": "Puskesmas Ketrowonojoyo",
+      "description": "Digitalized the health center with three web apps: UGD Payment, SPPD Online, and a portal with SSO login. Handled UI/UX, client reporting, and presentations, and shipped all three within one month.",
+      "tags": [
+        "Laravel",
+        "Bootstrap",
+        "PHPWord"
+      ],
+      "link": "https://puskesmasketrowonojoyo.com"
+    },
+    {
+      "id": "exp-ppmsr",
+      "period": "Dec 2022 — Present",
+      "role": "Fullstack Developer",
+      "org": "PPM Syafi'ur Rohman",
+      "description": "Built and maintain three websites for the boarding school: a company profile, the SMPSR student registration system, and SR Absensi for QR code attendance. All of them have been in daily use for over a year.",
+      "tags": [
+        "Laravel",
+        "Livewire",
+        "Bootstrap"
+      ],
+      "link": "https://ppmsr.com"
+    },
+    {
+      "id": "exp-gondosari",
+      "period": "Jun 2020 — May 2021",
+      "role": "Data Entry Assistant",
+      "org": "Puskesmas Gondosari Pacitan",
+      "description": "Helped record and organize service data at the community health center.",
+      "tags": [],
+      "link": ""
+    }
+  ],
+  "projects": [
+    {
+      "id": "prj-plasticwise",
+      "title": "PlasticWise",
+      "role": "Mobile Developer, UI/UX Designer",
+      "year": "2024",
+      "description": "Bangkit Academy capstone. An Android app that detects plastic types (PETE, HDPE, PVC, LDPE, PP, PS, and others) and recommends how to process each one. I designed the UI in Figma, implemented it in XML, and built the features with my team.",
+      "tags": [
+        "Android",
+        "XML",
+        "Figma",
+        "Machine Learning"
+      ],
+      "image": "",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/PlasticWise"
+        },
+        {
+          "label": "Figma",
+          "url": "https://www.figma.com/design/fJAU7fp3O56i70xHYZmgWo/Interface?node-id=26-648"
+        }
+      ]
+    },
+    {
+      "id": "prj-cdc",
+      "title": "CDC Polije",
+      "role": "Project Manager, UI/UX Designer, Frontend Developer",
+      "year": "2023",
+      "description": "Career Development Center for State Polytechnic of Jember: a web app for admins and companies and a mobile app for alumni, with job search, the Kemdikbud Tracer Study, and custom surveys. I ran the team with Scrum and Kanban.",
+      "tags": [
+        "Laravel",
+        "Bootstrap",
+        "Android",
+        "Scrum"
+      ],
+      "image": "",
+      "links": [
+        {
+          "label": "Play Store",
+          "url": "https://play.google.com/store/apps/details?id=com.jtinova.cdc"
+        },
+        {
+          "label": "Demo",
+          "url": "https://youtu.be/av116W73_EI"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/tajutzam/cdc-online"
+        },
+        {
+          "label": "Figma",
+          "url": "https://www.figma.com/design/SVSiTA3GZ4w1E2ZwL3doOh/CDC-Apps?node-id=0-1"
+        }
+      ]
+    },
+    {
+      "id": "prj-masjoyo",
+      "title": "Mas Joyo",
+      "role": "Fullstack Developer, Tester, Maintenance",
+      "year": "2023",
+      "description": "Three apps that digitalize Puskesmas Ketrowonojoyo Pacitan: UGD Payment for emergency payments, SPPD Online for staff travel documents, and a portal with single sign-on.",
+      "tags": [
+        "Laravel",
+        "Bootstrap",
+        "PHPWord",
+        "SSO"
+      ],
+      "image": "",
+      "links": [
+        {
+          "label": "Portal",
+          "url": "https://puskesmasketrowonojoyo.com"
+        },
+        {
+          "label": "UGD Payment",
+          "url": "https://ugd-payment.puskesmasketrowonojoyo.com"
+        },
+        {
+          "label": "SPPD Online",
+          "url": "https://sppd-online.puskesmasketrowonojoyo.com"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/tajutzam/mas_joyo_auth_server"
+        }
+      ]
+    },
+    {
+      "id": "prj-ppmsr",
+      "title": "PPM Syafi'ur Rohman Websites",
+      "role": "Fullstack Developer, Tester, Maintenance",
+      "year": "2022",
+      "description": "A company profile site, SMPSR for new student registration and student data, and SR Absensi, a QR code attendance system. Built to the client's needs and maintained for over a year.",
+      "tags": [
+        "Laravel",
+        "Livewire",
+        "Bootstrap"
+      ],
+      "image": "",
+      "links": [
+        {
+          "label": "Website",
+          "url": "https://ppmsr.com"
+        },
+        {
+          "label": "SMPSR",
+          "url": "https://smpsr.ppmsr.com/signin"
+        },
+        {
+          "label": "SR Absensi",
+          "url": "https://sr-absensi.ppmsr.com/login"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/zhqnrf/srAbsensi"
+        }
+      ]
+    },
+    {
+      "id": "prj-ssc",
+      "title": "SSC SMASA XXIV",
+      "role": "Frontend Web Developer",
+      "year": "2024",
+      "description": "Competition platform for SMA Negeri 1 Jember with multiple choice exams, video debates, and storytelling. Admins manage participants and scores; participants upload entries and see their results.",
+      "tags": [
+        "Laravel",
+        "Bootstrap"
+      ],
+      "image": "",
+      "links": [
+        {
+          "label": "Website",
+          "url": "https://sscxxiv.com/ssc/"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Arvita/sscsmasa2024"
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-polije",
+      "period": "2022 — Present",
+      "school": "State Polytechnic of Jember",
+      "major": "D3 Informatics Management",
+      "score": "GPA 3.91 / 4.00",
+      "description": "Matching Fund Program Batch 1 at JTI Innovation, VSGA Digitalent Junior Web Developer 2023, and Bangkit Academy Mobile Developer Path."
+    },
+    {
+      "id": "edu-sma",
+      "period": "2019 — 2022",
+      "school": "Senior High School 1 Pacitan",
+      "major": "Science",
+      "score": "Score 90.85 / 100",
+      "description": "Film club coordinator, class council chairman, Red Cross Youth, and scouts."
+    }
+  ],
+  "events": [
+    {
+      "id": "evt-temu-wali",
+      "year": "2024",
+      "title": "Temu Wali Santri",
+      "role": "Publication, Documentation & Decoration",
+      "description": "Hybrid report event from the school to parents, with 100 parents on site and 200 online. Handled venue decoration, graphic design, Zoom with vMix, and documentation.",
+      "link": ""
+    },
+    {
+      "id": "evt-meat-mania",
+      "year": "2023",
+      "title": "Meat Mania of Agrabah",
+      "role": "Coordinator of Decoration, Publication & Documentation",
+      "description": "Eid al-Adha celebration. Led the team for stage, lighting, sound, decorations, participant layout, and social media publication.",
+      "link": "https://ppmsr.com/blog/news-details.php?nid=18"
+    },
+    {
+      "id": "evt-kasandraloka",
+      "year": "2023",
+      "title": "Kasandraloka",
+      "role": "Events Division & Host",
+      "description": "Month-long leadership training for more than 50 new students. Designed the program and schedule, picked speakers, briefed other divisions, and hosted the sessions.",
+      "link": "https://youtu.be/GhyOraIXBXI"
+    },
+    {
+      "id": "evt-tangan-hebat",
+      "year": "2022",
+      "title": "Tangan Hebat Batch 4",
+      "role": "Equipment Division",
+      "description": "Clean-up of Tanjung Market, Jember, with more than 200 participants. Coordinated venue rental with vendors, decorations, and cleaning supplies.",
+      "link": "https://ppmsr.com/blog/news-details.php?nid=17"
+    }
+  ],
+  "organizations": [
+    {
+      "id": "org-ict",
+      "period": "2022 — Now",
+      "role": "Coordinator, Web Division",
+      "org": "ICT, Syafi'ur Rohman Islamic Boarding School"
+    },
+    {
+      "id": "org-cinema",
+      "period": "2019 — 2021",
+      "role": "Coordinator",
+      "org": "Cinema 271 Film Club, SMAN 1 Pacitan"
+    },
+    {
+      "id": "org-mpk",
+      "period": "2020 — 2021",
+      "role": "Chairman",
+      "org": "MPK, SMAN 1 Pacitan"
+    },
+    {
+      "id": "org-mpk-jatim",
+      "period": "2019 — 2021",
+      "role": "Member Association",
+      "org": "MPK East Java Province"
+    },
+    {
+      "id": "org-pmr",
+      "period": "2020 — 2021",
+      "role": "Creation Division",
+      "org": "Red Cross Youth, SMAN 1 Pacitan"
+    },
+    {
+      "id": "org-scout",
+      "period": "2020 — 2021",
+      "role": "Rover Mate",
+      "org": "Scout, SMAN 1 Pacitan"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "ach-bnsp",
+      "year": "2023",
+      "title": "Certified BNSP Web Developer"
+    },
+    {
+      "id": "ach-vsga",
+      "year": "2023",
+      "title": "Best Student, VSGA Digitalent National"
+    },
+    {
+      "id": "ach-pkkmb",
+      "year": "2022",
+      "title": "Best Student, PKKMB State Polytechnic of Jember"
+    },
+    {
+      "id": "ach-pateron",
+      "year": "2022",
+      "title": "Finalist, Informatics National Olympiad Pateron"
+    },
+    {
+      "id": "ach-lk2p",
+      "year": "2022",
+      "title": "2nd Place, National Short Film Competition (LK2P #3, Unitomo Scout)"
+    }
+  ],
+  "certificates": [
+    {
+      "id": "cert-bangkit",
+      "title": "Bangkit Academy — Mobile Development",
+      "issuer": "Google, GoTo, Traveloka",
+      "year": "2024",
+      "url": ""
+    },
+    {
+      "id": "cert-jti",
+      "title": "Internship, CDC & SSC SMASA Projects",
+      "issuer": "JTI Innovation Center",
+      "year": "2024",
+      "url": ""
+    },
+    {
+      "id": "cert-bnsp",
+      "title": "Junior Web Developer",
+      "issuer": "BNSP",
+      "year": "2023",
+      "url": ""
+    },
+    {
+      "id": "cert-vsga",
+      "title": "VSGA Junior Web Developer — Best Student",
+      "issuer": "Digitalent Kominfo",
+      "year": "2023",
+      "url": ""
+    },
+    {
+      "id": "cert-tbi",
+      "title": "English for Business Communication",
+      "issuer": "The British Institute",
+      "year": "",
+      "url": ""
+    },
+    {
+      "id": "cert-codingid",
+      "title": "Fullstack Mini Bootcamp",
+      "issuer": "Coding.ID",
+      "year": "",
+      "url": ""
+    },
+    {
+      "id": "cert-kariermu",
+      "title": "Microsoft PowerPoint Project",
+      "issuer": "karier.mu",
+      "year": "",
+      "url": ""
+    },
+    {
+      "id": "cert-dicoding",
+      "title": "Dicoding Courses",
+      "issuer": "Dicoding",
+      "year": "",
+      "url": ""
+    }
+  ]
+}
