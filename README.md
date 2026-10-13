@@ -45,5 +45,6 @@ app/pages/admin.vue        panel admin (CRUD)
 app/utils/schema.ts        daftar field tiap bagian di admin
 server/api/                API baca/simpan konten + login
 data/content.json          isi portofolio
-public/logo.png            logo
+app/components/LogoCat.vue logo SVG (hover = jadi kucing)
+app/components/PixelCat.vue kucing pixel yang mengejar kursor
 ```

@@ -64,14 +64,15 @@ onBeforeUnmount(() => {
 <template>
   <div ref="root" class="page">
     <div class="spotlight" aria-hidden="true" />
+    <PixelCat />
 
     <div class="shell">
       <!-- KIRI: header sticky -->
       <header class="side">
         <div>
-          <a href="#about" class="logo-link" aria-label="Back to top">
-            <img src="/logo.png" alt="" width="56" height="56" class="logo">
-          </a>
+          <div class="logo">
+            <LogoCat :size="60" />
+          </div>
           <h1 class="name">{{ profile.name }}</h1>
           <h2 class="role grad-text">{{ profile.role }}</h2>
           <p class="tagline">{{ profile.tagline }}</p>
@@ -286,8 +287,7 @@ onBeforeUnmount(() => {
 
 /* ---------- Sidebar ---------- */
 .side { padding-block: 56px 16px; }
-.logo { width: 52px; height: 52px; margin-bottom: 22px; transition: transform .3s; }
-.logo-link:hover .logo { transform: rotate(-8deg) scale(1.05); }
+.logo { margin-bottom: 22px; width: max-content; }
 .name {
   margin: 0;
   font-size: clamp(36px, 5vw, 50px);

@@ -1,10 +1,10 @@
 {
   "profile": {
     "name": "Zhaqian Rouf Alfauzi",
-    "role": "Web & Mobile Developer",
+    "role": "Software Engineer",
     "tagline": "I build clean, useful web and mobile apps for schools, clinics, and communities, from the first sketch to the final deploy.",
-    "about": "I'm an Informatics Management student at Jember State Polytechnic who mostly works on web and mobile development. I like finding the simple idea behind a messy problem and turning it into something people can actually use every day.\n\nMost of my work so far has been real systems for real clients: digitalizing a community health center with three Laravel apps in one month, building registration and QR-based attendance systems for an Islamic boarding school, and leading a team on a career center app for my campus. Along the way I've handled project management, UI/UX design, client presentations, and long-term maintenance.\n\nOutside of code I'm active in organizations and event committees, where I usually end up handling design, publication, and documentation.",
-    "location": "Jember, East Java",
+    "about": "I am a software engineer based in Kediri, East Java. I mostly build web and mobile apps, and I like finding the simple idea behind a messy problem and turning it into something people can actually use every day.\n\nMost of my work so far has been real systems for real clients: digitalizing a community health center with three Laravel apps in one month, building registration and QR-based attendance systems for an Islamic boarding school, and leading a team on a career center app for State Polytechnic of Jember, where I studied Informatics Management. Along the way I have handled project management, UI/UX design, client presentations, and long-term maintenance.\n\nOutside of code I am active in organizations and event committees, where I usually end up handling design, publication, and documentation.",
+    "location": "Kediri, East Java",
     "email": "zhaqianroufa@gmail.com",
     "phone": "+62 895-0951-2660",
     "whatsapp": "6289509512660",

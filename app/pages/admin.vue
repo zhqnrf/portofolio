@@ -46,7 +46,8 @@ async function logout() {
   authed.value = false
 }
 
-const isDirty = (key: string) => JSON.stringify(content.value[key] ?? null) !== saved.value[key]
+const isDirty = (key: string) =>
+  saved.value[key] !== undefined && JSON.stringify(content.value[key] ?? null) !== saved.value[key]
 const anyDirty = computed(() => sections.some((s) => isDirty(s.key)))
 
 function showToast(text: string, ok = true) {
@@ -99,11 +100,11 @@ function pick(s: SectionSchema) {
   confirmDelete.value = null
 }
 
-if (import.meta.client) {
-  window.addEventListener('beforeunload', (e) => {
-    if (anyDirty.value) e.preventDefault()
-  })
+const warnUnsaved = (e: BeforeUnloadEvent) => {
+  if (anyDirty.value) e.preventDefault()
 }
+onMounted(() => window.addEventListener('beforeunload', warnUnsaved))
+onBeforeUnmount(() => window.removeEventListener('beforeunload', warnUnsaved))
 </script>
 
 <template>
@@ -113,7 +114,7 @@ if (import.meta.client) {
 
     <!-- Login -->
     <form v-else-if="!authed" class="login" @submit.prevent="login">
-      <img src="/logo.png" alt="" width="56" height="56">
+      <LogoCat :size="56" />
       <h1>Masuk admin</h1>
       <p class="muted">Kelola isi portofolio kamu.</p>
       <label for="pw" class="f-label">Password</label>
@@ -127,7 +128,7 @@ if (import.meta.client) {
     <template v-else>
       <header class="bar">
         <div class="bar-left">
-          <img src="/logo.png" alt="" width="30" height="30">
+          <LogoCat :size="28" :interactive="false" />
           <strong>Admin Portofolio</strong>
         </div>
         <div class="bar-right">
