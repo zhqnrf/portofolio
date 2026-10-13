@@ -1,9 +1,11 @@
 <template>
   <NuxtPage />
   <!-- Tombol tema yang selalu menempel di pojok kanan atas -->
-  <div class="theme-fab">
-    <ThemeToggle />
-  </div>
+  <ClientOnly>
+    <div class="theme-fab">
+      <ThemeToggle />
+    </div>
+  </ClientOnly>
 </template>
 
 <style>
