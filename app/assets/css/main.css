@@ -62,6 +62,15 @@ h1, h2, h3, h4 { color: var(--ink); text-wrap: balance; }
 }
 .chip.plain { color: var(--ink); background: var(--soft); }
 
+/* Kursor kepala kucing pixel (dibuat oleh scripts/make-cursors.mjs) */
+@media (pointer: fine) {
+  html { cursor: url('/cursor.svg') 16 14, auto; }
+  a, button, [role='button'], label, summary, select, .logo-cat.interactive {
+    cursor: url('/cursor-pointer.svg') 16 14, pointer;
+  }
+  input, textarea { cursor: text; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }

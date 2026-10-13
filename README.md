@@ -46,5 +46,5 @@ app/utils/schema.ts        daftar field tiap bagian di admin
 server/api/                API baca/simpan konten + login
 data/content.json          isi portofolio
 app/components/LogoCat.vue logo SVG (hover = jadi kucing)
-app/components/PixelCat.vue kucing pixel yang mengejar kursor
+scripts/make-cursors.mjs   generator kursor kepala kucing pixel
 ```

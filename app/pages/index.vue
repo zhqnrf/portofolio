@@ -64,7 +64,6 @@ onBeforeUnmount(() => {
 <template>
   <div ref="root" class="page">
     <div class="spotlight" aria-hidden="true" />
-    <PixelCat />
 
     <div class="shell">
       <!-- KIRI: header sticky -->
