@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3f8f6"/>
+      <stop offset="1" stop-color="#e3f0f2"/>
+    </linearGradient>
+    <linearGradient id="drop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a583e"/>
+      <stop offset=".55" stop-color="#0b7068"/>
+      <stop offset="1" stop-color="#05718d"/>
+    </linearGradient>
+    <clipPath id="dropClip">
+      <path d="M0 -300 C 60 -200 200 -40 200 90 C 200 200 110 290 0 290 C -110 290 -200 200 -200 90 C -200 -40 -60 -200 0 -300 Z"/>
+    </clipPath>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#0b7068" stroke-opacity=".07" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+
+  <!-- Tetesan air berisi "rak server" -->
+  <g transform="translate(1130 470)">
+    <path d="M0 -300 C 60 -200 200 -40 200 90 C 200 200 110 290 0 290 C -110 290 -200 200 -200 90 C -200 -40 -60 -200 0 -300 Z" fill="url(#drop)"/>
+    <g clip-path="url(#dropClip)">
+      <!-- Permukaan air yang makin turun -->
+      <rect x="-220" y="-320" width="440" height="250" fill="#ffffff" opacity=".9"/>
+      <path d="M-220 -70 Q -165 -92 -110 -70 T 0 -70 T 110 -70 T 220 -70 V -60 H -220 Z" fill="#ffffff" opacity=".9"/>
+      <!-- Rak server -->
+      <g fill="none" stroke="#ffffff" stroke-opacity=".9" stroke-width="6" stroke-linecap="round">
+        <rect x="-120" y="-10" width="240" height="56" rx="8"/>
+        <rect x="-120" y="66" width="240" height="56" rx="8"/>
+        <rect x="-120" y="142" width="240" height="56" rx="8"/>
+      </g>
+      <g fill="#3fd3a0">
+        <circle cx="-88" cy="18" r="8"/><circle cx="-60" cy="18" r="8"/>
+        <circle cx="-88" cy="94" r="8"/><circle cx="-60" cy="94" r="8" fill="#36b9d6"/>
+        <circle cx="-88" cy="170" r="8" fill="#36b9d6"/><circle cx="-60" cy="170" r="8"/>
+      </g>
+      <g stroke="#ffffff" stroke-opacity=".55" stroke-width="5" stroke-linecap="round">
+        <line x1="10" y1="18" x2="92" y2="18"/><line x1="10" y1="94" x2="92" y2="94"/><line x1="10" y1="170" x2="92" y2="170"/>
+      </g>
+    </g>
+    <path d="M0 -300 C 60 -200 200 -40 200 90 C 200 200 110 290 0 290 C -110 290 -200 200 -200 90 C -200 -40 -60 -200 0 -300 Z" fill="none" stroke="#0b0f0e" stroke-width="8"/>
+  </g>
+
+  <!-- Uap -->
+  <g fill="none" stroke="#05718d" stroke-opacity=".35" stroke-width="6" stroke-linecap="round">
+    <path d="M1360 210 q 20 -30 0 -60 q -20 -30 0 -60"/>
+    <path d="M1420 250 q 20 -30 0 -60 q -20 -30 0 -60"/>
+  </g>
+
+  <!-- Judul -->
+  <g font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-weight="800">
+    <text x="120" y="330" fill="#0b0f0e" font-size="96" letter-spacing="-3">AI juga</text>
+    <text x="120" y="440" fill="#0b7068" font-size="96" letter-spacing="-3">haus.</text>
+  </g>
+  <text x="122" y="520" fill="#56616b" font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="34" font-weight="500">Dampak kecerdasan buatan terhadap air bersih</text>
+
+  <!-- Penanda -->
+  <g font-family="ui-monospace, Consolas, monospace" font-size="24" fill="#0b7068">
+    <rect x="120" y="610" width="300" height="56" rx="28" fill="#ffffff" stroke="#0b7068" stroke-opacity=".35" stroke-width="2"/>
+    <text x="270" y="646" text-anchor="middle">1 prompt ≈ ? mL</text>
+  </g>
+  <rect y="890" width="1600" height="10" fill="url(#drop)"/>
+</svg>

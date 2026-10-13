@@ -23,20 +23,31 @@ useHead(() => ({
   ],
 }))
 
-// Garis progres baca
-const progress = ref(0)
+// Garis progres baca — diubah langsung di DOM supaya artikel tidak di-render ulang saat scroll
+const bar = ref<HTMLElement | null>(null)
+let frame = 0
 function onScroll() {
-  const h = document.documentElement
-  const max = h.scrollHeight - h.clientHeight
-  progress.value = max > 0 ? Math.min(1, h.scrollTop / max) : 0
+  cancelAnimationFrame(frame)
+  frame = requestAnimationFrame(() => {
+    const h = document.documentElement
+    const max = h.scrollHeight - h.clientHeight
+    const p = max > 0 ? Math.min(1, h.scrollTop / max) : 0
+    if (bar.value) bar.value.style.width = `${(p * 100).toFixed(2)}%`
+  })
 }
-onMounted(() => window.addEventListener('scroll', onScroll, { passive: true }))
-onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
+onMounted(() => {
+  window.addEventListener('scroll', onScroll, { passive: true })
+  onScroll()
+})
+onBeforeUnmount(() => {
+  cancelAnimationFrame(frame)
+  window.removeEventListener('scroll', onScroll)
+})
 </script>
 
 <template>
   <div v-if="post">
-    <div class="progress" :style="{ transform: `scaleX(${progress})` }" aria-hidden="true" />
+    <div ref="bar" class="progress" aria-hidden="true" />
     <div class="wrap">
       <SiteHeader />
 
@@ -85,8 +96,8 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 
 <style scoped>
 .progress {
-  position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 50;
-  background: var(--grad); transform-origin: left; transform: scaleX(0);
+  position: fixed; top: 0; left: 0; width: 0; height: 3px; z-index: 50; pointer-events: none;
+  background: var(--grad);
 }
 .wrap { max-width: 980px; margin: 0 auto; padding-inline: 24px; }
 article { max-width: 720px; margin: 0 auto; }
