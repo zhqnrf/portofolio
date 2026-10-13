@@ -120,12 +120,12 @@ h1, h2, h3, h4 { color: var(--ink); text-wrap: balance; }
 .prose a { color: var(--teal); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
 .prose a:hover { color: var(--green); }
 .prose strong { color: var(--ink); font-weight: 700; }
-.prose ul, .prose ol { padding-left: 1.3em; }
+.prose ul, .prose ol { padding-inline-start: 1.3em; }
 .prose li + li { margin-top: .4em; }
 .prose li::marker { color: var(--teal); }
 .prose blockquote {
-  padding: 4px 0 4px 20px;
-  border-left: 3px solid transparent;
+  padding-block: 4px; padding-inline: 20px 0;
+  border-inline-start: 3px solid transparent;
   border-image: var(--grad) 1;
   color: var(--ink);
   font-size: 1.08em;
@@ -139,6 +139,20 @@ h1, h2, h3, h4 { color: var(--ink); text-wrap: balance; }
 .prose table { width: 100%; border-collapse: collapse; font-size: .92em; display: block; overflow-x: auto; }
 .prose th, .prose td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); }
 .prose th { color: var(--ink); font-weight: 700; }
+
+/* ---------- Bahasa ---------- */
+/* Huruf Latin tetap Plus Jakarta Sans; huruf Jepang/Korea/China/Arab memakai Noto yang dimuat saat dipilih */
+:root[lang='ja'] { --f-sans: 'Plus Jakarta Sans', 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', system-ui, sans-serif; }
+:root[lang='ko'] { --f-sans: 'Plus Jakarta Sans', 'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', system-ui, sans-serif; }
+:root[lang='zh'] { --f-sans: 'Plus Jakarta Sans', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif; }
+:root[lang='ar'] { --f-sans: 'Plus Jakarta Sans', 'Noto Sans Arabic', 'Segoe UI', Tahoma, system-ui, sans-serif; }
+/* Huruf Arab bersambung: jarak huruf harus normal supaya tidak terputus */
+:root[lang='ar'] body :not(pre):not(code):not([lang='id']) { letter-spacing: normal !important; }
+:root[lang='ar'] body { line-height: 1.8; }
+/* Ikon panah ikut arah tulisan */
+[dir='rtl'] .arrow { transform: scaleX(-1); }
+/* Kode selalu kiri-ke-kanan */
+.prose pre, .prose code { direction: ltr; text-align: left; unicode-bidi: isolate; }
 
 /* Kursor kepala kucing pixel (dibuat oleh scripts/make-cursors.mjs) */
 @media (pointer: fine) {

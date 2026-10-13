@@ -108,7 +108,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', warnUnsaved))
 </script>
 
 <template>
-  <div class="admin">
+  <div class="admin" lang="id" dir="ltr">
     <!-- Memuat -->
     <div v-if="authed === null" class="center muted">Memuat…</div>
 
@@ -259,7 +259,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', warnUnsaved))
 }
 .bar::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--grad); }
 .bar-left, .bar-right { display: flex; align-items: center; gap: 10px; }
-.bar-right { padding-right: 52px; }
+.bar-right { padding-inline-end: 120px; }
 .bar-left strong { color: var(--ink); }
 
 .layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 28px; max-width: 1100px; margin: 0 auto; padding: 28px 20px 80px; }

@@ -37,6 +37,15 @@ git push
 - Nyalakan **Tampilkan di situs** supaya tulisan muncul; kalau mati, tulisan jadi draf.
 - Halaman: `/blog` (daftar) dan `/blog/<slug>` (artikel). Arsip semua proyek ada di `/projects`.
 
+## Bahasa
+
+- Situs tersedia dalam Bahasa Indonesia, English, 日本語, 한국어, 中文, dan العربية (kanan-ke-kiri).
+  Pengunjung memilih lewat tombol 🌐 di pojok kanan atas; awalnya mengikuti bahasa browser.
+- Teks tampilan (menu, judul bagian, tombol) ada di `app/utils/i18n.ts`.
+- Profil dasar ditulis dalam bahasa Inggris (tab **Profil**). Versi bahasa lain diisi di tab
+  **Profil (terjemahan)**; kolom yang kosong otomatis memakai versi Inggris.
+- Pengalaman, proyek, dan artikel blog tetap dalam bahasa aslinya.
+
 ## Deploy gratis
 
 Situs dibangun sebagai halaman statis (`npm run generate`), jadi bisa di-hosting gratis:

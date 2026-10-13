@@ -11,11 +11,11 @@ export function readingMinutes(md: string) {
   return Math.max(1, Math.round(words / 200))
 }
 
-export function formatDate(date: string) {
+export function formatDate(date: string, locale = 'en-US') {
   if (!date) return ''
   const d = new Date(`${date}T00:00:00`)
   if (Number.isNaN(d.getTime())) return date
-  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+  return d.toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric' })
 }
 
 /** Tulisan yang tampil di situs, terbaru dulu */

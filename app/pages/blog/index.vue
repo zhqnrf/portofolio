@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { formatDate, publishedPosts, readingMinutes } from '~/utils/markdown'
 
+const { info, t } = useLang()
 const { data } = await useFetch<Record<string, any>>('/api/content', { key: 'content' })
 const posts = computed(() => publishedPosts(data.value?.posts))
 const name = computed(() => data.value?.profile?.name ?? '')
@@ -17,12 +18,13 @@ useHead(() => ({
 
     <main>
       <header class="intro">
-        <span class="label">Blog</span>
-        <h1>Catatan dari <span class="grad-text">balik layar.</span></h1>
-        <p>Tulisan tentang web, software, dan hal-hal yang aku pelajari waktu membangun sistem untuk orang sungguhan.</p>
+        <span class="label">{{ t('blog.label') }}</span>
+        <h1>{{ t('blog.titleA') }} <span class="grad-text">{{ t('blog.titleB') }}</span></h1>
+        <p>{{ t('blog.intro') }}</p>
+        <p v-if="t('blog.langNote')" class="lang-note">{{ t('blog.langNote') }}</p>
       </header>
 
-      <p v-if="!posts.length" class="empty">Belum ada tulisan. Tulisan pertama sedang disiapkan.</p>
+      <p v-if="!posts.length" class="empty">{{ t('blog.empty') }}</p>
 
       <ul v-else class="posts">
         <li v-for="(p, i) in posts" :key="p.slug" class="post" :class="{ featured: i === 0 }">
@@ -33,12 +35,12 @@ useHead(() => ({
             </div>
             <div class="post-body">
               <div class="meta label">
-                <time :datetime="p.date">{{ formatDate(p.date) }}</time>
+                <time :datetime="p.date">{{ formatDate(p.date, info.locale) }}</time>
                 <span>·</span>
-                <span>{{ readingMinutes(p.body) }} min read</span>
+                <span>{{ t('common.minRead', { n: readingMinutes(p.body) }) }}</span>
               </div>
-              <h2>{{ p.title }}</h2>
-              <p>{{ p.excerpt }}</p>
+              <h2 lang="id" dir="ltr">{{ p.title }}</h2>
+              <p lang="id" dir="ltr">{{ p.excerpt }}</p>
               <div v-if="p.tags?.length" class="chips"><span v-for="t in p.tags" :key="t" class="chip">{{ t }}</span></div>
             </div>
           </NuxtLink>
@@ -55,6 +57,7 @@ useHead(() => ({
 .intro { padding-block: 40px 48px; max-width: 40em; }
 .intro h1 { margin: 10px 0 14px; font-size: clamp(34px, 5vw, 52px); font-weight: 800; line-height: 1.08; letter-spacing: -0.035em; }
 .intro p { margin: 0; font-size: 17px; }
+.intro .lang-note { margin-top: 12px; font-size: 14px; color: var(--muted); }
 .empty { color: var(--muted); }
 
 .posts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 32px; }

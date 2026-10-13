@@ -1,4 +1,6 @@
 // Definisi form untuk halaman /admin. Tambah field di sini kalau mau kolom baru.
+import { LANGS, PROFILE_LANGS } from './i18n'
+
 export type FieldType = 'text' | 'textarea' | 'tags' | 'links' | 'url' | 'image' | 'markdown' | 'date' | 'checkbox'
 
 export interface Field {
@@ -36,6 +38,21 @@ export const sections: SectionSchema[] = [
       { key: 'linkedin', label: 'LinkedIn', type: 'url' },
       { key: 'resume', label: 'Link CV / résumé', type: 'url', hint: 'Kosongkan kalau belum ada.' },
     ],
+  },
+  {
+    key: 'profileI18n',
+    label: 'Profil (terjemahan)',
+    kind: 'object',
+    // Profil utama ditulis dalam bahasa Inggris; di sini versi bahasa lain. Kosongkan untuk memakai versi Inggris.
+    fields: PROFILE_LANGS.flatMap((code) => {
+      const name = LANGS.find((l) => l.code === code)!.label
+      return [
+        { key: `role_${code}`, label: `Peran — ${name}`, type: 'text' as const },
+        { key: `tagline_${code}`, label: `Tagline — ${name}`, type: 'textarea' as const },
+        { key: `about_${code}`, label: `Tentang saya — ${name}`, type: 'textarea' as const, hint: 'Pisahkan paragraf dengan satu baris kosong.' },
+        { key: `location_${code}`, label: `Lokasi — ${name}`, type: 'text' as const },
+      ]
+    }),
   },
   {
     key: 'skills',

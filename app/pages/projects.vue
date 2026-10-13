@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { t } = useLang()
 const { data } = await useFetch<Record<string, any>>('/api/content', { key: 'content' })
 const projects = computed<any[]>(() => data.value?.projects ?? [])
 const name = computed(() => data.value?.profile?.name ?? '')
@@ -10,20 +11,20 @@ useHead(() => ({ title: `All Projects — ${name.value}` }))
     <SiteHeader />
     <main>
       <header class="intro">
-        <span class="label">Archive</span>
-        <h1>All projects</h1>
-        <p>{{ projects.length }} projects, from hospital systems to school websites and mobile apps.</p>
+        <span class="label">{{ t('projects.label') }}</span>
+        <h1>{{ t('projects.title') }}</h1>
+        <p>{{ t('projects.count', { n: projects.length }) }}</p>
       </header>
 
       <div class="table-wrap">
         <table>
           <thead>
             <tr>
-              <th>Year</th>
-              <th>Project</th>
-              <th class="hide-sm">Role</th>
-              <th class="hide-md">Built with</th>
-              <th>Link</th>
+              <th>{{ t('projects.year') }}</th>
+              <th>{{ t('projects.project') }}</th>
+              <th class="hide-sm">{{ t('projects.role') }}</th>
+              <th class="hide-md">{{ t('projects.builtWith') }}</th>
+              <th>{{ t('projects.link') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -36,7 +37,7 @@ useHead(() => ({ title: `All Projects — ${name.value}` }))
                 <a v-if="p.links?.[0]?.url" :href="p.links[0].url" target="_blank" rel="noopener" class="go">
                   {{ p.links[0].label }} <Icon name="arrow" />
                 </a>
-                <span v-else class="private label">Internal</span>
+                <span v-else class="private label">{{ t('projects.internal') }}</span>
               </td>
             </tr>
           </tbody>
@@ -54,8 +55,8 @@ useHead(() => ({ title: `All Projects — ${name.value}` }))
 .intro p { margin: 0; }
 .table-wrap { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; font-size: 15px; }
-th { text-align: left; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); padding: 12px 12px 12px 0; border-bottom: 1px solid var(--line); }
-td { padding: 16px 12px 16px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { text-align: start; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); padding-block: 12px; padding-inline: 0 12px; border-bottom: 1px solid var(--line); }
+td { padding-block: 16px; padding-inline: 0 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
 tbody tr { transition: background .2s; }
 tbody tr:hover { background: var(--soft); }
 .year { padding-top: 19px; white-space: nowrap; }

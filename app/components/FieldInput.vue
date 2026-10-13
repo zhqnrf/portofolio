@@ -52,7 +52,7 @@ async function onImage(e: Event) {
       v-if="field.type === 'textarea'"
       :id="id"
       v-model="model"
-      :rows="field.key === 'about' ? 8 : 3"
+      :rows="field.key.startsWith('about') ? 8 : 3"
     />
 
     <template v-else-if="field.type === 'tags'">

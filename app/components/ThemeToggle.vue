@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // Tombol ganti mode terang/gelap. Default mengikuti sistem; pilihan disimpan di browser.
 const dark = ref(false)
+const { t } = useLang()
 
 function effectiveDark() {
   const set = document.documentElement.getAttribute('data-theme')
@@ -26,8 +27,8 @@ function toggle() {
   <button
     type="button"
     class="theme-toggle"
-    :aria-label="dark ? 'Ganti ke mode terang' : 'Ganti ke mode gelap'"
-    :title="dark ? 'Mode terang' : 'Mode gelap'"
+    :aria-label="dark ? t('theme.toLight') : t('theme.toDark')"
+    :title="dark ? t('theme.toLight') : t('theme.toDark')"
     @click="toggle"
   >
     <svg viewBox="0 0 24 24" aria-hidden="true" :class="{ dark }">

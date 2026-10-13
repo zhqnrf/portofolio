@@ -1,5 +1,5 @@
 // Bagian yang berupa satu objek (bukan daftar)
-const OBJECT_SECTIONS = ['profile', 'skills']
+const OBJECT_SECTIONS = ['profile', 'skills', 'profileI18n']
 const LIST_SECTIONS = [
   'experience',
   'projects',

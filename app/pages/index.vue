@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { formatDate, publishedPosts, readingMinutes } from '~/utils/markdown'
 
+const { lang, info, t } = useLang()
+
 const { data } = await useFetch<Record<string, any>>('/api/content', { key: 'content' })
 const posts = computed(() => publishedPosts(data.value?.posts))
 const lines = (text: string) => String(text || '').split('\n').map((l) => l.replace(/^[•\-*]\s*/, '').trim()).filter(Boolean)
 
-const profile = computed(() => data.value?.profile ?? {})
+const profile = computed(() => localizeProfile(data.value?.profile ?? {}, data.value?.profileI18n, lang.value))
 const skills = computed(() => data.value?.skills ?? {})
 const list = (key: string) => computed<any[]>(() => data.value?.[key] ?? [])
 const experience = list('experience')
@@ -27,15 +29,7 @@ const aboutParagraphs = computed<string[]>(() =>
   String(profile.value.about ?? '').split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean),
 )
 
-const nav = [
-  { id: 'about', label: 'About' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'writing', label: 'Writing' },
-  { id: 'activities', label: 'Activities' },
-  { id: 'publications', label: 'Publications' },
-  { id: 'awards', label: 'Awards' },
-]
+const nav = ['about', 'experience', 'projects', 'writing', 'activities', 'publications', 'awards'].map((id) => ({ id }))
 
 useHead(() => ({
   title: profile.value.name ? `${profile.value.name} — ${profile.value.role}` : 'Portfolio',
@@ -97,7 +91,7 @@ onBeforeUnmount(() => {
               :class="{ active: active === n.id }"
             >
               <span class="nav-line" />
-              <span class="nav-text">{{ n.label }}</span>
+              <span class="nav-text">{{ t(`nav.${n.id}`) }}</span>
             </a>
           </nav>
         </div>
@@ -121,26 +115,26 @@ onBeforeUnmount(() => {
       <!-- KANAN: konten -->
       <main class="content">
         <section id="about" class="section" aria-label="About me">
-          <h3 class="sec-title">About</h3>
+          <h3 class="sec-title">{{ t('nav.about') }}</h3>
           <p v-for="(p, i) in aboutParagraphs" :key="i" class="about-p">{{ p }}</p>
 
           <div class="skill-groups">
             <div v-if="skills.tech?.length" class="skill-group">
-              <span class="label">Tech</span>
+              <span class="label">{{ t('home.tech') }}</span>
               <div class="chips"><span v-for="s in skills.tech" :key="s" class="chip">{{ s }}</span></div>
             </div>
             <div v-if="skills.soft?.length" class="skill-group">
-              <span class="label">Soft skills</span>
+              <span class="label">{{ t('home.soft') }}</span>
               <div class="chips"><span v-for="s in skills.soft" :key="s" class="chip plain">{{ s }}</span></div>
             </div>
             <div v-if="skills.languages?.length" class="skill-group">
-              <span class="label">Languages</span>
+              <span class="label">{{ t('home.languages') }}</span>
               <div class="chips"><span v-for="s in skills.languages" :key="s" class="chip plain">{{ s }}</span></div>
             </div>
           </div>
 
           <div v-if="education.length" class="edu">
-            <span class="label">Education</span>
+            <span class="label">{{ t('home.education') }}</span>
             <div v-for="e in education" :key="e.id" class="edu-row">
               <div class="edu-head">
                 <strong>{{ e.school }}</strong>
@@ -153,7 +147,7 @@ onBeforeUnmount(() => {
         </section>
 
         <section id="experience" class="section" aria-label="Work experience">
-          <h3 class="sec-title">Experience</h3>
+          <h3 class="sec-title">{{ t('nav.experience') }}</h3>
           <ol class="items">
             <li v-for="x in experience" :key="x.id" class="item">
               <div class="item-bg" />
@@ -175,12 +169,12 @@ onBeforeUnmount(() => {
             </li>
           </ol>
           <a v-if="profile.resume" :href="profile.resume" target="_blank" rel="noopener" class="more-link">
-            View full résumé <Icon name="arrow" />
+            {{ t('home.resume') }} <Icon name="arrow" />
           </a>
         </section>
 
         <section id="projects" class="section" aria-label="Selected projects">
-          <h3 class="sec-title">Projects</h3>
+          <h3 class="sec-title">{{ t('nav.projects') }}</h3>
           <ul class="items">
             <li v-for="p in projects.slice(0, 6)" :key="p.id" class="item project">
               <div class="item-bg" />
@@ -205,13 +199,13 @@ onBeforeUnmount(() => {
             </li>
           </ul>
           <NuxtLink to="/projects" class="more-link">
-            View all {{ projects.length }} projects <Icon name="arrow" />
+            {{ t('home.allProjects', { n: projects.length }) }} <Icon name="arrow" />
           </NuxtLink>
         </section>
 
         <section id="writing" class="section" aria-label="Latest writing">
-          <h3 class="sec-title">Writing</h3>
-          <p v-if="!posts.length" class="item-desc">Belum ada tulisan.</p>
+          <h3 class="sec-title">{{ t('nav.writing') }}</h3>
+          <p v-if="!posts.length" class="item-desc">{{ t('home.noPosts') }}</p>
           <ul v-else class="items">
             <li v-for="p in posts.slice(0, 3)" :key="p.slug" class="item project">
               <div class="item-bg" />
@@ -225,18 +219,18 @@ onBeforeUnmount(() => {
                     {{ p.title }} <Icon name="arrow" class="arrow" />
                   </NuxtLink>
                 </h3>
-                <div class="label project-meta">{{ formatDate(p.date) }} · {{ readingMinutes(p.body) }} min read</div>
+                <div class="label project-meta">{{ formatDate(p.date, info.locale) }} · {{ t('common.minRead', { n: readingMinutes(p.body) }) }}</div>
                 <p class="item-desc">{{ p.excerpt }}</p>
               </div>
             </li>
           </ul>
           <NuxtLink to="/blog" class="more-link">
-            Read the blog <Icon name="arrow" />
+            {{ t('home.readBlog') }} <Icon name="arrow" />
           </NuxtLink>
         </section>
 
         <section id="activities" class="section" aria-label="Events and organizations">
-          <h3 class="sec-title">Activities</h3>
+          <h3 class="sec-title">{{ t('nav.activities') }}</h3>
           <ol class="items">
             <li v-for="ev in events" :key="ev.id" class="item">
               <div class="item-bg" />
@@ -255,7 +249,7 @@ onBeforeUnmount(() => {
           </ol>
 
           <div v-if="organizations.length" class="table-block">
-            <span class="label">Organizations</span>
+            <span class="label">{{ t('home.organizations') }}</span>
             <ul class="rows">
               <li v-for="o in organizations" :key="o.id" class="row">
                 <span class="label row-when">{{ o.period }}</span>
@@ -266,7 +260,7 @@ onBeforeUnmount(() => {
         </section>
 
         <section v-if="publications.length" id="publications" class="section" aria-label="Publications">
-          <h3 class="sec-title">Publications</h3>
+          <h3 class="sec-title">{{ t('nav.publications') }}</h3>
           <ol class="items">
             <li v-for="pub in publications" :key="pub.id" class="item">
               <div class="item-bg" />
@@ -292,9 +286,9 @@ onBeforeUnmount(() => {
         </section>
 
         <section id="awards" class="section" aria-label="Achievements and certificates">
-          <h3 class="sec-title">Awards</h3>
+          <h3 class="sec-title">{{ t('nav.awards') }}</h3>
           <div class="table-block first">
-            <span class="label">Achievements</span>
+            <span class="label">{{ t('home.achievements') }}</span>
             <ul class="rows">
               <li v-for="a in achievements" :key="a.id" class="row">
                 <span class="label row-when">{{ a.year }}</span>
@@ -303,7 +297,7 @@ onBeforeUnmount(() => {
             </ul>
           </div>
           <div v-if="certificates.length" class="table-block">
-            <span class="label">Certificates</span>
+            <span class="label">{{ t('home.certificates') }}</span>
             <ul class="rows">
               <li v-for="c in certificates" :key="c.id" class="row">
                 <span class="label row-when">{{ c.year || '—' }}</span>
@@ -320,8 +314,8 @@ onBeforeUnmount(() => {
         </section>
 
         <section class="contact" aria-label="Contact">
-          <h3 class="contact-title">Let's work <span class="grad-text">together.</span></h3>
-          <p>Have a project, an internship, or just want to say hi? My inbox is open.</p>
+          <h3 class="contact-title">{{ t('home.contactA') }} <span class="grad-text">{{ t('home.contactB') }}</span></h3>
+          <p>{{ t('home.contactText') }}</p>
           <div class="contact-actions">
             <a v-if="profile.email" :href="`mailto:${profile.email}`" class="btn"><Icon name="mail" /> {{ profile.email }}</a>
             <a v-if="profile.whatsapp" :href="`https://wa.me/${profile.whatsapp}`" target="_blank" rel="noopener" class="btn ghost"><Icon name="whatsapp" /> {{ profile.phone || 'WhatsApp' }}</a>
@@ -329,7 +323,7 @@ onBeforeUnmount(() => {
         </section>
 
         <footer class="foot">
-          Designed and built by {{ profile.name }} with Nuxt. Based in {{ profile.location }}.
+          {{ t('home.footer', { name: profile.name, location: profile.location }) }}
         </footer>
       </main>
     </div>
@@ -428,9 +422,9 @@ onBeforeUnmount(() => {
 .item-title { margin: 0; font-size: 17px; font-weight: 700; line-height: 1.35; }
 .item-title a, .item-title span { display: inline; }
 .org { color: var(--teal); }
-.arrow { display: inline-block; vertical-align: -2px; margin-left: 3px; font-size: 14px; transition: transform .2s; }
+.arrow { display: inline-block; vertical-align: -2px; margin-inline-start: 3px; font-size: 14px; transition: transform .2s; }
 .item-desc { margin: 0; font-size: 15px; }
-.item-points { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 15px; }
+.item-points { margin: 0; padding-inline-start: 18px; display: grid; gap: 6px; font-size: 15px; }
 .item-points li::marker { color: var(--teal); }
 .pub-authors { font-size: 14px; color: var(--muted); }
 .pub-authors strong { color: var(--ink); font-weight: 700; }

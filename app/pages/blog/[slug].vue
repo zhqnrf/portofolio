@@ -2,11 +2,13 @@
 import { formatDate, publishedPosts, readingMinutes, renderMarkdown } from '~/utils/markdown'
 
 const route = useRoute()
+const { info, t } = useLang()
 const { data } = await useFetch<Record<string, any>>('/api/content', { key: 'content' })
 const all = computed(() => publishedPosts(data.value?.posts))
 const post = computed(() => all.value.find((p) => p.slug === route.params.slug))
 const html = computed(() => renderMarkdown(post.value?.body ?? ''))
-const profile = computed(() => data.value?.profile ?? {})
+// Info penulis mengikuti bahasa artikel (Indonesia)
+const profile = computed(() => localizeProfile(data.value?.profile ?? {}, data.value?.profileI18n, 'id'))
 const others = computed(() => all.value.filter((p) => p.slug !== route.params.slug).slice(0, 2))
 
 if (!post.value) {
@@ -51,13 +53,13 @@ onBeforeUnmount(() => {
     <div class="wrap">
       <SiteHeader />
 
-      <article>
+      <article lang="id" dir="ltr">
         <header class="head">
-          <NuxtLink to="/blog" class="back label">← All posts</NuxtLink>
+          <NuxtLink to="/blog" class="back label">{{ t('blog.allPosts') }}</NuxtLink>
           <div class="meta label">
-            <time :datetime="post.date">{{ formatDate(post.date) }}</time>
+            <time :datetime="post.date">{{ formatDate(post.date, info.locale) }}</time>
             <span>·</span>
-            <span>{{ readingMinutes(post.body) }} min read</span>
+            <span>{{ t('common.minRead', { n: readingMinutes(post.body) }) }}</span>
           </div>
           <h1>{{ post.title }}</h1>
           <p v-if="post.excerpt" class="excerpt">{{ post.excerpt }}</p>
@@ -82,10 +84,10 @@ onBeforeUnmount(() => {
       </article>
 
       <aside v-if="others.length" class="more">
-        <span class="label">Tulisan lain</span>
+        <span class="label">{{ t('blog.more') }}</span>
         <NuxtLink v-for="p in others" :key="p.slug" :to="`/blog/${p.slug}`" class="more-item">
           <strong>{{ p.title }}</strong>
-          <span class="label">{{ formatDate(p.date) }}</span>
+          <span class="label">{{ formatDate(p.date, info.locale) }}</span>
         </NuxtLink>
       </aside>
 
