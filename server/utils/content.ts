@@ -9,6 +9,7 @@ const LIST_SECTIONS = [
   'achievements',
   'certificates',
   'posts',
+  'publications',
 ]
 
 export function slugify(text: string) {

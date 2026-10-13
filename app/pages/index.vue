@@ -15,6 +15,13 @@ const events = list('events')
 const organizations = list('organizations')
 const achievements = list('achievements')
 const certificates = list('certificates')
+const publications = list('publications')
+
+const authorList = (s: string) => String(s || '').split(',').map((a) => a.trim()).filter(Boolean)
+const isMe = (a: string) => {
+  const last = String(profile.value.name || '').trim().split(/\s+/).pop()?.toLowerCase()
+  return !!last && a.toLowerCase().includes(last)
+}
 
 const aboutParagraphs = computed<string[]>(() =>
   String(profile.value.about ?? '').split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean),
@@ -26,6 +33,7 @@ const nav = [
   { id: 'projects', label: 'Projects' },
   { id: 'writing', label: 'Writing' },
   { id: 'activities', label: 'Activities' },
+  { id: 'publications', label: 'Publications' },
   { id: 'awards', label: 'Awards' },
 ]
 
@@ -257,6 +265,32 @@ onBeforeUnmount(() => {
           </div>
         </section>
 
+        <section v-if="publications.length" id="publications" class="section" aria-label="Publications">
+          <h3 class="sec-title">Publications</h3>
+          <ol class="items">
+            <li v-for="pub in publications" :key="pub.id" class="item">
+              <div class="item-bg" />
+              <span class="item-when label">{{ pub.year }}</span>
+              <div class="item-body">
+                <h3 class="item-title">
+                  <component :is="pub.link ? 'a' : 'span'" :href="pub.link || undefined" :target="pub.link ? '_blank' : undefined" rel="noopener" :class="{ 'stretch': pub.link }">
+                    {{ pub.title }}
+                    <Icon v-if="pub.link" name="arrow" class="arrow" />
+                  </component>
+                </h3>
+                <div class="pub-authors">
+                  <template v-for="(a, i) in authorList(pub.authors)" :key="i">
+                    <strong v-if="isMe(a)">{{ a }}</strong><span v-else>{{ a }}</span><span v-if="i < authorList(pub.authors).length - 1">, </span>
+                  </template>
+                </div>
+                <div class="label project-meta">{{ pub.venue }}</div>
+                <p v-if="pub.summary" class="item-desc">{{ pub.summary }}</p>
+                <div v-if="pub.tags?.length" class="chips"><span v-for="t in pub.tags" :key="t" class="chip">{{ t }}</span></div>
+              </div>
+            </li>
+          </ol>
+        </section>
+
         <section id="awards" class="section" aria-label="Achievements and certificates">
           <h3 class="sec-title">Awards</h3>
           <div class="table-block first">
@@ -398,6 +432,8 @@ onBeforeUnmount(() => {
 .item-desc { margin: 0; font-size: 15px; }
 .item-points { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 15px; }
 .item-points li::marker { color: var(--teal); }
+.pub-authors { font-size: 14px; color: var(--muted); }
+.pub-authors strong { color: var(--ink); font-weight: 700; }
 .project-meta { margin-top: -4px; }
 
 .stretch::after { content: ''; position: absolute; inset: -16px; z-index: 2; }

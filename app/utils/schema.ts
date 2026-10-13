@@ -97,6 +97,22 @@ export const sections: SectionSchema[] = [
     ],
   },
   {
+    key: 'publications',
+    label: 'Publikasi',
+    kind: 'list',
+    titleKey: 'title',
+    subKey: 'venue',
+    fields: [
+      { key: 'year', label: 'Tahun', type: 'text' },
+      { key: 'title', label: 'Judul', type: 'text' },
+      { key: 'authors', label: 'Penulis', type: 'text', hint: 'Pisahkan dengan koma. Namamu akan ditebalkan otomatis.' },
+      { key: 'venue', label: 'Jurnal / konferensi', type: 'text', hint: 'Contoh: Journal of Information System Research (JOSH), 7(4), 1088–1099' },
+      { key: 'link', label: 'Link (DOI)', type: 'url' },
+      { key: 'summary', label: 'Ringkasan singkat', type: 'textarea' },
+      { key: 'tags', label: 'Kata kunci', type: 'tags' },
+    ],
+  },
+  {
     key: 'education',
     label: 'Pendidikan',
     kind: 'list',
