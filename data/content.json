@@ -46,16 +46,17 @@
   "experience": [
     {
       "id": "exp-alfa-software",
-      "period": "Present",
+      "period": "2026 — Present",
       "role": "Founder & Director",
-      "org": "PT Alfa Software",
-      "location": "Kediri, East Java",
-      "description": "Founded and run my own software company (PT Perorangan), handling everything from client meetings and quotes to development, deployment, and maintenance.\nDelivered client projects such as school library and finance apps and digital wedding invitations.",
+      "org": "PT Alfa Solusi Abadi (Alfa Software)",
+      "location": "Pacitan, East Java",
+      "description": "Founded Alfa Software, an IT solutions company registered as a PT Perorangan with the Ministry of Law (AHU-A114208.AH.01.30.Tahun 2026).\nOffers custom software (web apps, management information systems, API integration), original software licenses, and IT maintenance for hardware, servers, and networks.\nHandle the whole client cycle, from meetings and quotes to development, deployment, and maintenance.",
       "tags": [
-        "Business",
-        "Client Projects"
+        "Laravel",
+        "IT Services",
+        "Business"
       ],
-      "link": ""
+      "link": "https://alfasoftware.vercel.app/"
     },
     {
       "id": "exp-rsud-slg",
@@ -303,6 +304,24 @@
       ]
     },
     {
+      "id": "prj-bjpm",
+      "title": "BinaJaya Perkasa Mandiri Website",
+      "role": "Web Developer",
+      "year": "",
+      "description": "Company profile for a Surabaya-based scaffolding and construction contractor: services, product catalog, project gallery, safety articles, video profile, and branch contacts.",
+      "tags": [
+        "Web Development",
+        "Company Profile"
+      ],
+      "image": "",
+      "links": [
+        {
+          "label": "Website",
+          "url": "https://binajayaperkasamandiri.com/"
+        }
+      ]
+    },
+    {
       "id": "prj-fitc",
       "title": "Flash Inspire Training Center",
       "role": "Fullstack Developer",
@@ -380,6 +399,21 @@
           "url": "https://id.linkedin.com/company/mark-design-indonesia"
         }
       ]
+    },
+    {
+      "id": "prj-sr-prediksi",
+      "title": "SR Prediksi",
+      "role": "Researcher, Fullstack Developer",
+      "year": "2024",
+      "description": "My undergraduate thesis. Fewer than 30% of students graduated on time, so I built a Laravel web app that classifies on-time graduation with the Naive Bayes classifier, based on pages of Qur'an tafsir and hadith completed over three years. A dashboard helps the board monitor progress. Black box tested, with UAT scores of 95.66% from students and 84% from teachers.",
+      "tags": [
+        "Laravel",
+        "Naive Bayes",
+        "Machine Learning",
+        "Waterfall"
+      ],
+      "image": "",
+      "links": []
     },
     {
       "id": "prj-plasticwise",
@@ -492,15 +526,63 @@
       ]
     },
     {
-      "id": "prj-ppmsr",
-      "title": "PPM Syafi'ur Rohman Websites",
-      "role": "Fullstack Developer, Tester, Maintenance",
-      "year": "2022",
-      "description": "Four systems for the boarding school, used by over 300 people: the official website, SMPSR for entrance selection and student data, SR Absensi for QR code attendance, and a graduation prediction system.",
+      "id": "prj-sr-absensi",
+      "title": "SR Absensi",
+      "role": "Fullstack Developer, Maintenance",
+      "year": "2023",
+      "description": "QR code attendance system for students at PPM Syafi'ur Rohman, with attendance records and recap reports for the board. In daily use for over a year.",
       "tags": [
         "Laravel",
         "Livewire",
-        "Bootstrap"
+        "QR Code",
+        "MySQL"
+      ],
+      "image": "",
+      "links": [
+        {
+          "label": "Website",
+          "url": "https://sr-absensi.ppmsr.com/login"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/zhqnrf/srAbsensi"
+        }
+      ]
+    },
+    {
+      "id": "prj-smpsr",
+      "title": "SMPSR",
+      "role": "Fullstack Developer, Maintenance",
+      "year": "2023",
+      "description": "Online admission system for new students (mahasantri) at PPM Syafi'ur Rohman, similar to a school PPDB: registration, document upload, selection, and student data management.",
+      "tags": [
+        "Laravel",
+        "Livewire",
+        "Bootstrap",
+        "MySQL"
+      ],
+      "image": "",
+      "links": [
+        {
+          "label": "Website",
+          "url": "https://smpsr.ppmsr.com/signin"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/zhqnrf/ppmsr_smpsr"
+        }
+      ]
+    },
+    {
+      "id": "prj-ppmsr",
+      "title": "PPM Syafi'ur Rohman Website",
+      "role": "Fullstack Developer, Maintenance",
+      "year": "2022",
+      "description": "Official website and company profile for PPM Syafi'ur Rohman Jember, with news and information for students and parents.",
+      "tags": [
+        "Laravel",
+        "Bootstrap",
+        "MySQL"
       ],
       "image": "",
       "links": [
@@ -509,16 +591,8 @@
           "url": "https://ppmsr.com"
         },
         {
-          "label": "SMPSR",
-          "url": "https://smpsr.ppmsr.com/signin"
-        },
-        {
-          "label": "SR Absensi",
-          "url": "https://sr-absensi.ppmsr.com/login"
-        },
-        {
           "label": "GitHub",
-          "url": "https://github.com/zhqnrf/srAbsensi"
+          "url": "https://github.com/zhqnrf/Web-Blog-PPM"
         }
       ]
     }
@@ -530,7 +604,7 @@
       "school": "State Polytechnic of Jember",
       "major": "D3 Informatics Management",
       "score": "GPA 3.91 / 4.00",
-      "description": "Matching Fund Program Batch 1 at JTI Innovation, VSGA Digitalent Junior Web Developer 2023, and Bangkit Academy Mobile Developer Path."
+      "description": "Matching Fund Program Batch 1 at JTI Innovation, VSGA Digitalent Junior Web Developer 2023, and Bangkit Academy Mobile Developer Path. Thesis: on-time graduation classification of students with Naive Bayes (SR Prediksi)."
     },
     {
       "id": "edu-sma",
