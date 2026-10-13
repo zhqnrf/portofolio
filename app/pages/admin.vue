@@ -132,7 +132,6 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', warnUnsaved))
           <strong>Admin Portofolio</strong>
         </div>
         <div class="bar-right">
-          <ThemeToggle />
           <a href="/" target="_blank" class="btn ghost">Lihat situs ↗</a>
           <button type="button" class="btn ghost" @click="logout">Keluar</button>
         </div>
@@ -260,6 +259,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', warnUnsaved))
 }
 .bar::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--grad); }
 .bar-left, .bar-right { display: flex; align-items: center; gap: 10px; }
+.bar-right { padding-right: 52px; }
 .bar-left strong { color: var(--ink); }
 
 .layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 28px; max-width: 1100px; margin: 0 auto; padding: 28px 20px 80px; }

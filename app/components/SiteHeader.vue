@@ -21,7 +21,6 @@ const isActive = (to: string) => (to === '/' ? route.path === '/' : route.path.s
       <nav aria-label="Main">
         <NuxtLink v-for="l in links" :key="l.to" :to="l.to" :class="{ active: isActive(l.to) }">{{ l.label }}</NuxtLink>
       </nav>
-      <ThemeToggle />
     </div>
   </header>
 </template>
@@ -36,7 +35,7 @@ const isActive = (to: string) => (to === '/' ? route.path === '/' : route.path.s
   padding-block: 28px;
 }
 .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 800; color: var(--ink); letter-spacing: -0.01em; }
-.right { display: flex; align-items: center; gap: 22px; }
+.right { display: flex; align-items: center; gap: 22px; padding-right: 56px; }
 nav { display: flex; gap: 22px; }
 nav a {
   font-size: 12px;

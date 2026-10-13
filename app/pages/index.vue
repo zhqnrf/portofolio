@@ -107,7 +107,6 @@ onBeforeUnmount(() => {
           <li v-if="profile.whatsapp">
             <a :href="`https://wa.me/${profile.whatsapp}`" target="_blank" rel="noopener" aria-label="WhatsApp"><Icon name="whatsapp" /></a>
           </li>
-          <li class="theme-li"><ThemeToggle /></li>
         </ul>
       </header>
 
@@ -347,7 +346,6 @@ onBeforeUnmount(() => {
 .socials a { display: grid; place-items: center; font-size: 22px; color: var(--muted); transition: color .2s, transform .2s; }
 .socials a:hover { color: var(--ink); transform: translateY(-2px); }
 .socials { align-items: center; }
-.theme-li { margin-left: 4px; }
 
 /* ---------- Konten ---------- */
 .content { padding-block: 24px 64px; }
