@@ -38,7 +38,7 @@ function onMove(e: PointerEvent) {
   const r = root.value?.getBoundingClientRect()
   if (!r) return
   const dx = e.clientX - (r.left + r.width / 2)
-  const dy = e.clientY - (r.top + r.height * 0.49)
+  const dy = e.clientY - (r.top + r.height * 0.46)
   const d = Math.hypot(dx, dy) || 1
   const k = Math.min(d / 120, 1) * 14
   look.x = (dx / d) * k
@@ -92,39 +92,51 @@ onBeforeUnmount(() => window.removeEventListener('pointermove', onMove))
 
       <!-- Wajah kucing -->
       <g :transform="`translate(${CX} ${CY}) scale(1.18) translate(-838 -837)`">
-      <g class="face">
-        <g class="blush" fill="#f4a3b8">
-          <ellipse cx="702" cy="912" rx="30" ry="16" />
-          <ellipse cx="974" cy="912" rx="30" ry="16" />
-        </g>
-
-        <g class="eyes" :style="{ transform: `translate(${look.x}px, ${look.y}px)` }">
-          <g class="eye-l">
-            <ellipse cx="752" cy="826" rx="38" ry="48" :fill="url(ids.grad)" />
-            <circle cx="766" cy="806" r="14" fill="#ffffff" />
-            <circle cx="740" cy="846" r="6.5" fill="#ffffff" />
+        <g class="face" stroke-linecap="round" stroke-linejoin="round">
+          <g class="blush" fill="#f4a3b8">
+            <ellipse cx="702" cy="912" rx="30" ry="16" />
+            <ellipse cx="974" cy="912" rx="30" ry="16" />
           </g>
-          <g class="eye-r">
-            <ellipse cx="924" cy="826" rx="38" ry="48" :fill="url(ids.grad)" />
-            <circle cx="938" cy="806" r="14" fill="#ffffff" />
-            <circle cx="912" cy="846" r="6.5" fill="#ffffff" />
+
+          <!-- Mata (mengikuti kursor) -->
+          <g class="eyes" :style="{ transform: `translate(${look.x}px, ${look.y}px)` }">
+            <g class="eye eye-l">
+              <ellipse cx="752" cy="826" rx="38" ry="48" :fill="url(ids.grad)" />
+              <circle cx="766" cy="806" r="14" fill="#ffffff" />
+              <circle cx="740" cy="846" r="6.5" fill="#ffffff" />
+            </g>
+            <g class="eye eye-r">
+              <ellipse cx="924" cy="826" rx="38" ry="48" :fill="url(ids.grad)" />
+              <circle cx="938" cy="806" r="14" fill="#ffffff" />
+              <circle cx="912" cy="846" r="6.5" fill="#ffffff" />
+            </g>
+          </g>
+          <!-- Mata senang ^^ saat diklik -->
+          <g class="eyes-happy" fill="none" :stroke="url(ids.grad)" stroke-width="11">
+            <path d="M718 836 Q752 790 786 836" />
+            <path d="M890 836 Q924 790 958 836" />
+          </g>
+
+          <!-- Hidung: tempat simbol @ "mendarat" -->
+          <path class="nose" d="M814 894 Q838 882 862 894 Q856 914 838 920 Q820 914 814 894Z" fill="#ef8aa5" />
+
+          <g fill="none" :stroke="url(ids.grad)" stroke-width="9">
+            <!-- Mulut ω -->
+            <path class="mouth" pathLength="1" d="M790 934 Q796 948 812 948 Q838 948 838 918 Q838 948 864 948 Q880 948 886 934" />
+            <!-- Kumis -->
+            <g class="whiskers" stroke-width="7">
+              <path pathLength="1" d="M690 880 L578 858" />
+              <path pathLength="1" d="M688 902 L574 910" />
+              <path pathLength="1" d="M986 880 L1098 858" />
+              <path pathLength="1" d="M988 902 L1102 910" />
+            </g>
+          </g>
+          <!-- Mulut terbuka saat diklik -->
+          <g class="mouth-open">
+            <path d="M806 930 Q838 924 870 930 Q866 984 838 986 Q810 984 806 930Z" :fill="url(ids.grad)" />
+            <path d="M818 962 Q838 950 858 962 Q852 982 838 983 Q824 982 818 962Z" fill="#ef8aa5" />
           </g>
         </g>
-
-        <path d="M814 894 Q838 882 862 894 Q856 914 838 920 Q820 914 814 894Z" fill="#ef8aa5" />
-
-        <g fill="none" :stroke="url(ids.grad)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
-          <path class="mouth-closed" d="M838 918 Q838 948 812 948 Q796 948 790 934 M838 918 Q838 948 864 948 Q880 948 886 934" />
-          <g class="whiskers" stroke-width="7">
-            <path d="M690 880 L578 858 M688 902 L574 910" />
-            <path d="M986 880 L1098 858 M988 902 L1102 910" />
-          </g>
-        </g>
-        <g class="mouth-open">
-          <path d="M806 930 Q838 924 870 930 Q866 984 838 986 Q810 984 806 930Z" :fill="url(ids.grad)" />
-          <path d="M818 962 Q838 950 858 962 Q852 982 838 983 Q824 982 818 962Z" fill="#ef8aa5" />
-        </g>
-      </g>
       </g>
     </svg>
     <span v-if="interactive" class="bubble" aria-hidden="true">meow!</span>
@@ -136,41 +148,69 @@ onBeforeUnmount(() => window.removeEventListener('pointermove', onMove))
 .logo-cat.interactive { cursor: inherit; }
 svg { width: 100%; height: 100%; display: block; overflow: visible; }
 
-.at, .face, .tail, .head-fill, .eye-l, .eye-r, .whiskers, .mouth-open, .mouth-closed {
+.at, .tail, .head-fill, .eye, .nose, .mouth, .mouth-open, .eyes-happy, .whiskers path {
   transform-box: fill-box;
   transform-origin: center;
-  transition: opacity .3s ease, transform .4s cubic-bezier(.3, 1.5, .5, 1);
 }
-.tail { transform-origin: 50% 0%; }
-.face { opacity: 0; transform: scale(.7); }
-.head-fill { opacity: 0; }
 .eyes { transition: transform .12s ease-out; }
-.mouth-open { opacity: 0; transform: scale(.4); }
 
-/* Jadi kucing */
+/* ---------- Keadaan awal (logo @) — transisi balik cepat, tanpa jeda ---------- */
+.at { transition: transform .4s cubic-bezier(.3, 1.3, .5, 1) .12s, opacity .2s ease .12s; }
+.head-fill { opacity: 0; transition: opacity .2s ease .1s; }
+.nose { opacity: 0; transform: scale(0); transition: transform .2s ease, opacity .2s ease; }
+.eye { transform: scaleY(0); transition: transform .15s ease; }
+.mouth, .whiskers path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset .15s ease;
+}
+.eyes-happy { opacity: 0; transition: opacity .15s; }
+.blush { opacity: 0; transition: opacity .15s; }
+.interactive:hover .blush,
+.awake .blush { opacity: .85; transition: opacity .4s ease .5s; }
+.mouth-open { opacity: 0; transform: scale(.3); transition: opacity .15s, transform .15s; }
+.tail { transform-origin: 50% 0%; }
+
+/* ---------- Jadi kucing: @ turun & mengecil jadi hidung, lalu wajah muncul berurutan ---------- */
 .interactive:hover .at,
-.awake .at { opacity: 0; transform: scale(.3) rotate(-120deg); }
-.interactive:hover .face,
-.awake .face { opacity: 1; transform: scale(1); }
+.awake .at {
+  opacity: 0;
+  transform: translateY(78px) scale(.1);
+  transition: transform .42s cubic-bezier(.6, 0, .4, 1), opacity .18s ease .26s;
+}
 .interactive:hover .head-fill,
-.awake .head-fill { opacity: 1; }
+.awake .head-fill { opacity: 1; transition-delay: 0s; }
+.interactive:hover .nose,
+.awake .nose {
+  opacity: 1;
+  transform: scale(1);
+  transition: transform .35s cubic-bezier(.3, 1.8, .5, 1) .3s, opacity .1s ease .3s;
+}
+.interactive:hover .eye,
+.awake .eye {
+  transform: scaleY(1);
+  transition: transform .3s cubic-bezier(.3, 1.6, .5, 1) .42s;
+}
+.interactive:hover .mouth,
+.awake .mouth { stroke-dashoffset: 0; transition: stroke-dashoffset .35s ease-out .48s; }
+.interactive:hover .whiskers path,
+.awake .whiskers path { stroke-dashoffset: 0; transition: stroke-dashoffset .3s ease-out .6s; }
+.interactive:hover .whiskers path:nth-child(even),
+.awake .whiskers path:nth-child(even) { transition-delay: .68s; }
+
+/* Hidup: kedip & ekor bergoyang setelah transisi selesai */
+.interactive:hover .eye { animation: blink 3.6s ease-in-out 1.6s infinite; }
 .interactive:hover .tail,
-.awake .tail { animation: wag .7s ease-in-out infinite alternate; }
-.interactive:hover .eye-l,
-.interactive:hover .eye-r { animation: blink 3s infinite 1s; }
-.interactive:hover .whiskers,
-.awake .whiskers { animation: twitch 2s ease-in-out infinite; }
-.interactive:hover svg { animation: tilt 2.4s ease-in-out infinite; transform-origin: 50% 60%; }
+.awake .tail { animation: wag 1.1s ease-in-out .5s infinite alternate; }
 
-/* Saat diklik: mata merem senang, mulut terbuka */
-.awake .eye-l, .awake .eye-r { transform: scaleY(.15); }
-.awake .mouth-closed { opacity: 0; }
-.awake .mouth-open { opacity: 1; transform: scale(1); }
+/* Saat diklik: mata senang & mulut terbuka */
+.awake .eye { opacity: 0; }
+.awake .eyes-happy { opacity: 1; }
+.awake .mouth { opacity: 0; }
+.awake .mouth-open { opacity: 1; transform: scale(1); transition: transform .3s cubic-bezier(.3, 1.8, .5, 1), opacity .1s; }
 
-@keyframes wag { from { transform: rotate(-22deg); } to { transform: rotate(22deg); } }
-@keyframes blink { 0%, 92%, 100% { transform: scaleY(1); } 96% { transform: scaleY(.1); } }
-@keyframes twitch { 0%, 82%, 100% { transform: translateY(0); } 90% { transform: translateY(-6px); } }
-@keyframes tilt { 0%, 100% { transform: rotate(0); } 30% { transform: rotate(-4deg); } 70% { transform: rotate(3deg); } }
+@keyframes wag { from { transform: rotate(-14deg); } to { transform: rotate(14deg); } }
+@keyframes blink { 0%, 94%, 100% { transform: scaleY(1); } 97% { transform: scaleY(.1); } }
 
 .bubble {
   position: absolute;
@@ -194,6 +234,7 @@ svg { width: 100%; height: 100%; display: block; overflow: visible; }
 .awake .bubble { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
-  .tail, .eye-l, .eye-r, .whiskers, svg { animation: none !important; }
+  .tail, .eye { animation: none !important; }
+  .logo-cat * { transition-duration: .01s !important; transition-delay: 0s !important; }
 }
 </style>
