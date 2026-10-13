@@ -6,7 +6,17 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: 'en' },
-      meta: [{ name: 'theme-color', content: '#ffffff' }],
+      meta: [
+        { name: 'theme-color', content: '#ffffff', media: '(prefers-color-scheme: light)' },
+        { name: 'theme-color', content: '#0b1110', media: '(prefers-color-scheme: dark)' },
+      ],
+      // Terapkan tema tersimpan sebelum halaman tampil, supaya tidak berkedip
+      script: [
+        {
+          innerHTML: "try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}",
+          tagPosition: 'head',
+        },
+      ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },

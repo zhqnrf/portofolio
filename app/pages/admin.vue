@@ -132,6 +132,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', warnUnsaved))
           <strong>Admin Portofolio</strong>
         </div>
         <div class="bar-right">
+          <ThemeToggle />
           <a href="/" target="_blank" class="btn ghost">Lihat situs ↗</a>
           <button type="button" class="btn ghost" @click="logout">Keluar</button>
         </div>
@@ -233,8 +234,8 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', warnUnsaved))
 }
 .btn:hover:not(:disabled) { border-color: var(--ink); }
 .btn:disabled { opacity: .45; cursor: not-allowed; }
-.btn.primary { background: var(--ink); border-color: var(--ink); color: #ffffff; }
-.btn.primary:hover:not(:disabled) { background: var(--green); border-color: var(--green); }
+.btn.primary { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.btn.primary:hover:not(:disabled) { background: var(--teal); border-color: var(--teal); color: var(--bg); }
 .btn.danger { background: #b42318; border-color: #b42318; color: #ffffff; }
 .btn.sm { padding: 5px 10px; font-size: 13px; }
 
@@ -300,7 +301,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', warnUnsaved))
 
 .toast {
   position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%);
-  background: var(--ink); color: #ffffff; padding: 10px 18px; border-radius: 999px; font-size: 14px; font-weight: 600;
+  background: var(--ink); color: var(--bg); padding: 10px 18px; border-radius: 999px; font-size: 14px; font-weight: 600;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, .4);
 }
 .toast.bad { background: #b42318; }

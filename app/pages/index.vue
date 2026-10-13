@@ -107,6 +107,7 @@ onBeforeUnmount(() => {
           <li v-if="profile.whatsapp">
             <a :href="`https://wa.me/${profile.whatsapp}`" target="_blank" rel="noopener" aria-label="WhatsApp"><Icon name="whatsapp" /></a>
           </li>
+          <li class="theme-li"><ThemeToggle /></li>
         </ul>
       </header>
 
@@ -345,6 +346,8 @@ onBeforeUnmount(() => {
 .socials { list-style: none; padding: 0; margin: 32px 0 0; display: flex; gap: 20px; }
 .socials a { display: grid; place-items: center; font-size: 22px; color: var(--muted); transition: color .2s, transform .2s; }
 .socials a:hover { color: var(--ink); transform: translateY(-2px); }
+.socials { align-items: center; }
+.theme-li { margin-left: 4px; }
 
 /* ---------- Konten ---------- */
 .content { padding-block: 24px 64px; }
@@ -448,7 +451,7 @@ onBeforeUnmount(() => {
 .row-sub { display: block; font-size: 13px; color: var(--muted); }
 .cert-link:hover strong { color: var(--teal); }
 
-.contact { margin-top: 24px; padding: 36px 28px; border-radius: 16px; background: var(--ink); color: color-mix(in srgb, #ffffff 75%, var(--ink)); position: relative; overflow: hidden; }
+.contact { margin-top: 24px; padding: 36px 28px; border-radius: 16px; background: var(--panel); box-shadow: inset 0 0 0 1px var(--panel-line); color: #b9c7c2; position: relative; overflow: hidden; }
 .contact::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 4px; background: var(--grad); }
 .contact-title { margin: 0; color: #ffffff; font-size: clamp(26px, 4vw, 34px); font-weight: 800; letter-spacing: -0.03em; }
 .contact-title .grad-text { background: linear-gradient(135deg, #3fd3a0, #36b9d6); -webkit-background-clip: text; background-clip: text; }
@@ -456,7 +459,7 @@ onBeforeUnmount(() => {
 .contact-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
 .btn {
   display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 999px;
-  background: #ffffff; color: var(--ink); font-weight: 600; font-size: 14px; word-break: break-all;
+  background: #ffffff; color: #0b0f0e; font-weight: 600; font-size: 14px; word-break: break-all;
   transition: transform .15s;
 }
 .btn:hover { transform: translateY(-1px); }
@@ -472,6 +475,8 @@ onBeforeUnmount(() => {
     top: 0;
     width: 46%;
     max-height: 100vh;
+    overflow-y: auto;
+    scrollbar-width: none;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -493,6 +498,15 @@ onBeforeUnmount(() => {
   .thumb { width: 100%; margin-top: 4px; }
   .item-bg { inset: -20px -24px; }
   .stretch::after { inset: -20px -24px; }
+}
+
+/* Layar pendek (laptop kecil): rapatkan supaya sosmed & tombol tema tetap terlihat */
+@media (min-width: 1024px) and (max-height: 820px) {
+  .side { padding-block: 56px 40px; }
+  .content { padding-block: 56px; }
+  .nav { margin-top: 36px; }
+  .nav a { padding-block: 7px; }
+  .logo { margin-bottom: 14px; }
 }
 
 @media (max-width: 560px) {

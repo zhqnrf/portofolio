@@ -62,9 +62,9 @@ onBeforeUnmount(() => window.removeEventListener('pointermove', onMove))
     <svg viewBox="580 520 656 828" role="img" aria-label="Logo Zhaqian">
       <defs>
         <linearGradient :id="ids.grad" x1="0" y1="540" x2="0" y2="1330" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stop-color="#0a583e" />
-          <stop offset="0.55" stop-color="#0b7068" />
-          <stop offset="1" stop-color="#05718d" />
+          <stop offset="0" style="stop-color: var(--logo-1)" />
+          <stop offset="0.55" style="stop-color: var(--logo-2)" />
+          <stop offset="1" style="stop-color: var(--logo-3)" />
         </linearGradient>
         <!-- Bagian dalam (simbol @) -->
         <clipPath :id="ids.inner">
@@ -82,7 +82,7 @@ onBeforeUnmount(() => window.removeEventListener('pointermove', onMove))
       </defs>
 
       <!-- Isi kepala putih (muncul saat jadi kucing) -->
-      <circle class="head-fill" :cx="CX" :cy="CY" r="268" fill="#ffffff" />
+      <circle class="head-fill" :cx="CX" :cy="CY" r="268" style="fill: var(--bg)" />
 
       <g :fill="url(ids.grad)" fill-rule="evenodd">
         <path :d="LOGO_PATH" :mask="url(ids.outer)" />
