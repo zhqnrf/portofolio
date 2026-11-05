@@ -40,6 +40,7 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+       preset: 'vercel',
     // Semua konten disimpan di data/content.json
     storage: {
       content: { driver: 'fs', base: './data' },
