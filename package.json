@@ -2,7 +2,9 @@
   "name": "portfolio-zhqnrf",
   "private": true,
   "type": "module",
-  "engines": { "node": "24.x" },
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "nuxt dev",
     "build": "nuxt build",
@@ -14,7 +16,7 @@
     "ioredis": "^5.11.1",
     "marked": "^15.0.12",
     "nuxt": "^4.1.0",
-    "unstorage": "^2.0.0-beta.0",
+    "unstorage": "^1.17.6",
     "vue": "^3.5.0",
     "vue-router": "^4.5.0"
   }
