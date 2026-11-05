@@ -7,7 +7,10 @@ export default defineNitroPlugin(async () => {
   }
   try {
     const { default: redisDriver } = await import('unstorage/drivers/redis')
-    useStorage().mount(
+    const storage = useStorage()
+    // 'content' sudah dipasang sebagai fs oleh nuxt.config, lepas dulu
+    await storage.unmount('content')
+    storage.mount(
       'content',
       redisDriver({ url, base: 'portfolio', connectTimeout: 5000, maxRetriesPerRequest: 1 }),
     )
