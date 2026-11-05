@@ -35,21 +35,17 @@ export default defineNuxtConfig({
     sessionSecret: '',
   },
 
-  routeRules: {
+   routeRules: {
     '/admin': { ssr: false },
+    '/': { isr: 60 },
+    '/blog': { isr: 60 },
+    '/blog/**': { isr: 60 },
+    '/projects': { isr: 60 },
   },
-   preset: 'vercel',
   nitro: {
-       preset: 'vercel',
-    // Semua konten disimpan di data/content.json
+    preset: 'vercel',
     storage: {
       content: { driver: 'fs', base: './data' },
-    },
-    // Halaman blog ditemukan otomatis lewat link dari /blog
-    prerender: {
-      routes: ['/', '/blog', '/projects'],
-      crawlLinks: true,
-      ignore: ['/admin'],
     },
   },
 })
