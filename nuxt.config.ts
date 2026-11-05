@@ -38,7 +38,7 @@ export default defineNuxtConfig({
   routeRules: {
     '/admin': { ssr: false },
   },
-
+   preset: 'vercel',
   nitro: {
        preset: 'vercel',
     // Semua konten disimpan di data/content.json
